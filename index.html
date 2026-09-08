@@ -2303,6 +2303,52 @@ section:not(#home) {
 }
 </script>
   
+<style id="method13-cinematic">
+:root{--c-bg:#07090d;--c-panel:rgba(17,21,29,.72);--c-line:rgba(255,255,255,.11);--c-text:#f5f7fb;--c-muted:#9ca6b5;--c-accent:#dce7ff;--c-glow:rgba(117,157,255,.32)}
+body{background:#07090d;color:var(--c-text);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-5;background:radial-gradient(circle at 75% 15%,rgba(69,104,190,.16),transparent 28%),radial-gradient(circle at 15% 70%,rgba(92,112,151,.11),transparent 30%),linear-gradient(180deg,#07090d,#0a0d13 48%,#07090d)}
+body:after{content:"";position:fixed;inset:0;z-index:50;pointer-events:none;opacity:.045;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E")}
+nav{background:rgba(7,9,13,.68)!important;border-bottom:1px solid var(--c-line)!important;backdrop-filter:blur(22px)!important;box-shadow:0 10px 50px rgba(0,0,0,.18)}
+.nav-brand{font-family:'DM Sans',sans-serif!important;font-weight:600!important;letter-spacing:.08em!important;text-transform:uppercase}
+.nav-links a{color:#cbd2de!important}.nav-links a:hover{color:#fff!important}
+.hero{min-height:100svh!important;position:relative;display:flex;align-items:center;background:transparent!important}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,9,13,.96) 0%,rgba(7,9,13,.72) 45%,rgba(7,9,13,.15) 100%),radial-gradient(circle at 75% 50%,rgba(91,126,207,.18),transparent 34%);pointer-events:none}
+.hero-grid{position:relative;z-index:2;max-width:1440px!important;min-height:100svh;padding-top:110px!important;padding-bottom:80px!important}
+.hero-content{max-width:760px!important}
+.hero-eyebrow,.section-label,.act-marker{font-family:'DM Sans',sans-serif!important;letter-spacing:.2em!important;text-transform:uppercase;font-size:11px!important;color:#8fa6cc!important}
+.hero h1{font-size:clamp(4rem,8.7vw,9.2rem)!important;line-height:.86!important;letter-spacing:-.07em!important;font-weight:500!important;max-width:1000px!important;text-wrap:balance;text-transform:uppercase}
+.hero h1 em{font-style:normal;background:linear-gradient(100deg,#fff 20%,#93b7ff 65%,#fff 95%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-desc{font-size:clamp(15px,1.3vw,19px)!important;color:#aeb7c5!important;max-width:680px!important;line-height:1.75!important}
+.hero-tags .tag{background:rgba(255,255,255,.045)!important;border:1px solid var(--c-line)!important;color:#cbd4e2!important;backdrop-filter:blur(12px);transition:.35s}
+.hero-tags .tag:hover{transform:translateY(-3px);border-color:rgba(160,190,255,.35)!important;background:rgba(150,180,255,.08)!important}
+.btn-primary{background:#f4f7fb!important;color:#080a0f!important;border-radius:999px!important;padding:15px 23px!important;box-shadow:0 12px 40px rgba(0,0,0,.28),0 0 0 1px rgba(255,255,255,.25);transition:.35s!important}
+.btn-primary:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 18px 50px rgba(70,110,200,.28)}
+.hero-visual{min-height:620px!important;perspective:1200px}
+.id-card{position:relative!important;z-index:3!important;transform:rotateY(-8deg) rotateX(4deg)!important;background:linear-gradient(145deg,rgba(255,255,255,.10),rgba(255,255,255,.025))!important;border:1px solid rgba(255,255,255,.16)!important;box-shadow:0 35px 100px rgba(0,0,0,.45),inset 0 1px rgba(255,255,255,.12)!important;backdrop-filter:blur(24px)!important}
+.cinematic-core{position:absolute;inset:2% 4% 8%;display:flex;align-items:center;justify-content:center;z-index:1;filter:drop-shadow(0 0 50px var(--c-glow));transform:translateZ(-80px);animation:coreFloat 9s ease-in-out infinite}
+.core-ring{position:absolute;border:1px solid rgba(151,181,255,.27);border-radius:50%;box-shadow:0 0 40px rgba(103,145,230,.08),inset 0 0 30px rgba(103,145,230,.06)}
+.core-ring-a{width:390px;height:390px;animation:spinA 18s linear infinite}.core-ring-b{width:285px;height:285px;border-style:dashed;animation:spinB 12s linear infinite}
+.core-grid{width:205px;height:205px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#d9e6ff 0 1%,rgba(122,163,255,.38) 5%,rgba(63,98,170,.15) 24%,transparent 62%),linear-gradient(90deg,transparent 49.5%,rgba(160,190,255,.2) 50%,transparent 50.5%),linear-gradient(transparent 49.5%,rgba(160,190,255,.2) 50%,transparent 50.5%);box-shadow:0 0 80px rgba(93,140,235,.25),inset 0 0 50px rgba(117,157,255,.15);animation:pulseCore 3.5s ease-in-out infinite}
+.core-node{position:absolute;width:8px;height:8px;border-radius:50%;background:#dce8ff;box-shadow:0 0 18px 4px rgba(139,179,255,.55)}.node-a{transform:translate(155px,-105px)}.node-b{transform:translate(-165px,65px)}.node-c{transform:translate(120px,130px)}
+.core-label{position:absolute;margin-top:330px;font-size:9px;letter-spacing:.28em;color:#9db5df}.core-flow{position:absolute;margin-top:405px;display:flex;align-items:center;gap:10px;font-size:8px;letter-spacing:.12em;color:#8998ae}.core-flow i{display:block;width:18px;height:1px;background:linear-gradient(90deg,transparent,#9ab8ef)}
+@keyframes spinA{to{transform:rotate(360deg)}}@keyframes spinB{to{transform:rotate(-360deg)}}@keyframes pulseCore{50%{transform:scale(1.055);box-shadow:0 0 105px rgba(93,140,235,.34),inset 0 0 65px rgba(117,157,255,.18)}}@keyframes coreFloat{50%{transform:translate3d(0,-13px,-80px)}}
+.float-chip{background:rgba(11,15,22,.72)!important;border:1px solid rgba(255,255,255,.12)!important;color:#cbd5e4!important;backdrop-filter:blur(18px)!important;box-shadow:0 20px 60px rgba(0,0,0,.3)!important}
+.divider{height:1px!important;background:linear-gradient(90deg,transparent,rgba(255,255,255,.14),transparent)!important}
+section:not(.hero){position:relative;max-width:1440px!important;margin-left:auto;margin-right:auto;padding-top:130px!important;padding-bottom:130px!important}
+section:not(.hero):after{content:"";position:absolute;top:0;left:50%;width:1px;height:70px;background:linear-gradient(#7f9fd5,transparent);opacity:.25}
+.section-title{font-size:clamp(3rem,6vw,7rem)!important;line-height:.95!important;letter-spacing:-.055em!important;font-weight:500!important;color:#f2f5fa!important}
+.act-marker{margin:0 auto;max-width:1440px;padding:20px 5%;font-size:9px!important;opacity:.7;border-top:1px solid rgba(255,255,255,.07)}
+.about-text p,.timeline-bullets li,.project-desc,.timeline-org{color:#aab4c3!important}.stat-block,.timeline-item,.project-card,.simulation-card,.cert-card,.skill-card{background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.025))!important;border:1px solid rgba(255,255,255,.10)!important;box-shadow:0 25px 80px rgba(0,0,0,.20),inset 0 1px rgba(255,255,255,.06)!important;backdrop-filter:blur(18px)!important}
+.project-card{overflow:hidden;transition:transform .55s cubic-bezier(.2,.7,.2,1),border-color .35s,box-shadow .55s!important;transform-style:preserve-3d}.project-card:hover{transform:translateY(-12px) rotateX(2deg)!important;border-color:rgba(154,186,255,.28)!important;box-shadow:0 35px 100px rgba(0,0,0,.35),0 0 50px rgba(86,128,215,.08)!important}.project-media:after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent 20%,rgba(255,255,255,.12) 50%,transparent 80%);transform:translateX(-130%);transition:transform .9s}.project-card:hover .project-media:after{transform:translateX(130%)}
+.project-link,.case-study-btn{border-radius:999px!important}.tech-chip{background:rgba(255,255,255,.055)!important;border-color:rgba(255,255,255,.09)!important;color:#b9c5d7!important}
+.timeline-icon,.project-icon{filter:grayscale(.3);box-shadow:0 0 0 1px rgba(255,255,255,.1)!important}
+.contact-card{background:radial-gradient(circle at 80% 20%,rgba(93,136,225,.14),transparent 35%),linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.025))!important;border:1px solid rgba(255,255,255,.12)!important;box-shadow:0 35px 100px rgba(0,0,0,.3)!important}
+footer{background:#05070a!important;border-top:1px solid rgba(255,255,255,.08)!important}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr!important}.hero-content{padding-top:20px}.hero-visual{min-height:500px!important;margin-top:-20px}.cinematic-core{opacity:.8}.core-ring-a{width:310px;height:310px}.core-ring-b{width:230px;height:230px}.core-grid{width:165px;height:165px}.core-label{margin-top:270px}.core-flow{margin-top:335px}.id-card{transform:rotateY(-3deg)!important;max-width:420px;margin:auto}.hero h1{font-size:clamp(3.6rem,15vw,7rem)!important}}
+@media(max-width:640px){nav{height:56px}.hero{min-height:auto!important;padding-top:80px}.hero-grid{padding-top:55px!important;padding-bottom:50px!important}.hero h1{font-size:clamp(3.15rem,16vw,5.3rem)!important;letter-spacing:-.075em!important}.hero-desc{font-size:14px!important}.hero-tags{gap:7px!important}.hero-tags .tag{font-size:10px!important}.hero-visual{min-height:390px!important}.cinematic-core{inset:0}.core-ring-a{width:270px;height:270px}.core-ring-b{width:200px;height:200px}.core-grid{width:135px;height:135px}.core-label{margin-top:235px}.core-flow{margin-top:290px;gap:6px;font-size:6.5px}.core-flow i{width:9px}.float-chip{font-size:9px!important}.chip-1{left:0!important}.chip-2{right:0!important}.chip-3{display:none!important}section:not(.hero){padding-top:85px!important;padding-bottom:85px!important}.section-title{font-size:clamp(2.8rem,14vw,4.7rem)!important}.act-marker{padding-left:6%;padding-right:6%}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.001ms!important}}
+@media(pointer:coarse){.project-card:hover{transform:none!important}.project-media:after{display:none}}
+</style>
 </head>
 <body>
 
@@ -2353,7 +2399,7 @@ section:not(#home) {
   <div class="hero-grid">
     <div class="hero-content">
      <p class="hero-eyebrow">Business Analysis &nbsp;·&nbsp; Data Analytics &nbsp;·&nbsp; Business Intelligence</p>
-      <h1>I turn raw data into <em>decisions</em> businesses can act on</h1>
+      <h1>TURNING <em>DATA</em> INTO DECISIONS</h1>
       <p class="hero-desc">
         I transform business and operational data into dashboards, insights, forecasts, and recommendations that support better decisions across <strong>Business Analysis, Data Analytics, Business Intelligence, and AI.</strong>
       </p>
@@ -2367,13 +2413,19 @@ section:not(#home) {
       </div>
       <div class="hero-cta">
         <a href="#projects" class="btn-primary">
-          View Projects
+          Explore My Work
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </div>
     </div>
 
     <div class="hero-visual" aria-hidden="true">
+      <div class="cinematic-core" aria-hidden="true">
+        <div class="core-ring core-ring-a"></div><div class="core-ring core-ring-b"></div>
+        <div class="core-grid"></div><div class="core-node node-a"></div><div class="core-node node-b"></div><div class="core-node node-c"></div>
+        <div class="core-label">DATA INTELLIGENCE</div>
+        <div class="core-flow"><span>DATA</span><i></i><span>ANALYSIS</span><i></i><span>INSIGHT</span><i></i><span>DECISION</span></div>
+      </div>
       <div class="hero-orb hero-orb-1"></div>
       <div class="hero-orb hero-orb-2"></div>
 
@@ -2404,6 +2456,7 @@ section:not(#home) {
 
 <div class="divider"></div>
 
+<div class="act-marker">01 / THE FOUNDATION</div>
 <!-- ABOUT -->
 <section id="about">
   <p class="section-label">About Me</p>
@@ -2456,6 +2509,7 @@ section:not(#home) {
 
 <div class="divider"></div>
 
+<div class="act-marker">02 / THE JOURNEY</div>
 <!-- EXPERIENCE -->
 <section id="experience">
   <p class="section-label">Experience</p>
@@ -2526,6 +2580,7 @@ section:not(#home) {
 
 <div class="divider"></div>
 
+<div class="act-marker">03 / THE WORK</div>
 <!-- PROJECTS -->
 <section id="projects">
   <p class="section-label">Projects</p>
@@ -2747,6 +2802,7 @@ section:not(#home) {
 
 <div class="divider"></div>
 
+<div class="act-marker">05 / THE STACK</div>
 <!-- CERTIFICATIONS -->
 <section id="certifications">
   <p class="section-label">Certifications</p>
@@ -3149,6 +3205,7 @@ section:not(#home) {
 
 <div class="divider"></div>
 
+<div class="act-marker">06 / WHAT’S NEXT</div>
 <!-- CONTACT -->
 <section id="contact">
   <p class="section-label">Contact</p>
@@ -3648,5 +3705,15 @@ if (!reduceMotion && window.matchMedia('(pointer: fine)').matches) {
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeCaseModal(); });
 </script>
 
+<script id="method13-engine">
+(()=>{
+ const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches, coarse=matchMedia('(pointer:coarse)').matches;
+ if(!reduce&&!coarse){document.querySelectorAll('.project-card,.stat-block,.timeline-item').forEach(card=>{card.addEventListener('pointermove',e=>{const r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;card.style.transform=`translateY(-10px) rotateX(${(-y*3).toFixed(2)}deg) rotateY(${(x*4).toFixed(2)}deg)`});card.addEventListener('pointerleave',()=>card.style.transform='')})}
+ const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('cinematic-in');obs.unobserve(e.target)}}),{threshold:.08});
+ document.querySelectorAll('section:not(.hero) .section-title,.project-card,.timeline-item,.stat-block').forEach(el=>{el.classList.add('cinematic-reveal');obs.observe(el)});
+ const style=document.createElement('style');style.textContent='.cinematic-reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}.cinematic-in{opacity:1;transform:none}';document.head.appendChild(style);
+ const progress=document.getElementById('scrollProgress'); if(progress) window.addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-innerHeight;progress.style.transform=`scaleX(${h?scrollY/h:0})`},{passive:true});
+})();
+</script>
 </body>
 </html>
