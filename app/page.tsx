@@ -61,7 +61,7 @@ function FeaturedProjectFrame({
   return (
     <motion.div
       layoutId="project-image-frame"
-      className="showcase-image-frame liquid-glass" onClick={() => window.open(project.link, "_blank", "noopener,noreferrer")}
+      className="showcase-image-frame liquid-glass"
       initial={reduced ? false : { opacity: 0, x: direction * 55, scale: 0.96 }}
       animate={{ opacity: 1, x: 0, scale: 1 }}
       exit={reduced ? undefined : { opacity: 0, x: direction * -55, scale: 0.96 }}
@@ -192,10 +192,6 @@ export default function Home() {
   const [activeProject, setActiveProject] = useState(0);
   const [direction, setDirection] = useState(1);
   const [showcasePaused, setShowcasePaused] = useState(false);
-  const [theme, setTheme] = useState<"dark" | "light">(() => {
-    if (typeof document === "undefined") return "dark";
-    return document.documentElement.dataset.theme === "light" ? "light" : "dark";
-  });
   const reduced = useReducedMotion();
 
   const currentProject = projects[activeProject];
@@ -218,15 +214,6 @@ export default function Home() {
       (current) => (current - 1 + projects.length) % projects.length
     );
   };
-
-  useEffect(() => {
-    document.documentElement.dataset.theme = theme;
-    try {
-      window.localStorage.setItem("rsp-theme", theme);
-    } catch {
-      // Session-only fallback when storage is unavailable.
-    }
-  }, [theme]);
 
   useEffect(() => {
     if (reduced || showcasePaused) return;
@@ -258,11 +245,10 @@ export default function Home() {
 
       <header className="site-header">
         <nav className="nav-pill liquid-glass">
-          <div className="nav-identity">
-  <span className="nav-identity-line">─</span>
-  <span>DATA ANALYST · AI &amp; DATA SCIENCE</span>
-</div>
-          
+          <a href="#top" className="brand-mark">
+            RSP <b>/26</b>
+          </a>
+
           <div className="nav-links">
             <a href="#about">About</a>
             <a href="#experience">Experience</a>
@@ -273,15 +259,6 @@ export default function Home() {
           </div>
 
           <div className="nav-actions">
-            <button
-              type="button"
-              className="theme-toggle"
-              onClick={() => setTheme((current) => (current === "dark" ? "light" : "dark"))}
-              aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
-              aria-pressed={theme === "light"}
-            >
-              <span aria-hidden="true">{theme === "dark" ? "☼" : "☾"}</span>
-            </button>
             <a href="#contact" className="nav-cta" data-magnetic data-liquid>
               <span className="button-label">Start a Conversation <span>↗</span></span>
               <svg className="button-border-svg" viewBox="0 0 100 36" preserveAspectRatio="none" aria-hidden="true"><rect x="1" y="1" width="98" height="34" rx="17" /></svg>
@@ -336,7 +313,8 @@ export default function Home() {
                 <svg className="button-border-svg" viewBox="0 0 100 36" preserveAspectRatio="none" aria-hidden="true"><rect x="1" y="1" width="98" height="34" rx="17" /></svg>
               </a>
 
-<a href="/assets/Rohansaipavan-cv.pdf" download className="button button-secondary button-cv" data-magnetic data-liquid>                <span className="button-label">Download CV <span>↓</span></span>
+              <a href="/rohan-sai-pavan-cv.pdf" download className="button button-secondary button-cv" data-magnetic data-liquid>
+                <span className="button-label">Download CV <span>↓</span></span>
                 <svg className="button-border-svg" viewBox="0 0 100 36" preserveAspectRatio="none" aria-hidden="true"><rect x="1" y="1" width="98" height="34" rx="17" /></svg>
               </a>
             </div>
@@ -797,25 +775,25 @@ export default function Home() {
                 ))}
               </div>
 
-              {/* ARROW CONTROLS REMOVED — AUTO ROTATION EVERY 5 SECONDS. */}
-              {/* <button */}
-              {/* type="button" */}
-              {/* onClick={previousProject} */}
-              {/* aria-label="Previous project" */}
-              {/* className="showcase-arrow" */}
-              {/* > */}
-              {/* ← */}
-              {/* </button> */}
-              {/*  */}
-              {/* <button */}
-              {/* type="button" */}
-              {/* onClick={nextProject} */}
-              {/* aria-label="Next project" */}
-              {/* className="showcase-arrow showcase-arrow-primary" */}
-              {/* > */}
-              {/* → */}
-              {/* </button> */}
-              {/* </div> */}
+              <div className="showcase-arrows">
+                <button
+                  type="button"
+                  onClick={previousProject}
+                  aria-label="Previous project"
+                  className="showcase-arrow"
+                >
+                  ←
+                </button>
+
+                <button
+                  type="button"
+                  onClick={nextProject}
+                  aria-label="Next project"
+                  className="showcase-arrow showcase-arrow-primary"
+                >
+                  →
+                </button>
+              </div>
             </div>
 
             <div className="showcase-progress">
@@ -902,7 +880,7 @@ export default function Home() {
 
           <Reveal className="education-reveal">
           <div className="education-grid">
-            <article className="education-card education-card-srm">
+            <article className="education-card">
               <span>2024 — 2026</span>
 
               <h3>MBA — AI &amp; Data Science</h3>
@@ -912,7 +890,7 @@ export default function Home() {
               <strong>CGPA 9.04</strong>
             </article>
 
-            <article className="education-card education-card-kbn">
+            <article className="education-card">
               <span>2021 — 2024</span>
 
               <h3>B.Sc. — Data Science</h3>
