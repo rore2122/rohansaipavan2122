@@ -6,111 +6,111 @@
 
 :root {
   color-scheme: light;
-  --bg-primary: #c8c8c8;
-  --bg-surface: #d4d4d4;
-  --bg-surface-strong: #bdbdbd;
-  --bg-surface-hover: #dedede;
-  --bg-surface-deep: #b8b8b8;
-  --bg-contact: #c2c2c2;
-  --bg-footer: #aaaaaa;
-  --text-primary: #102a4c;
-  --text-secondary: #29415f;
-  --text-muted: #5d6b7a;
-  --text-on-accent: #ffffff;
-  --accent: #102a4c;
-  --accent-bright: #1b3d67;
+  --bg-primary: #f4f0e8;
+  --bg-surface: #eee8dd;
+  --bg-surface-strong: #e6ddd0;
+  --bg-surface-hover: #ded4c6;
+  --bg-surface-deep: #e9e1d5;
+  --bg-contact: #eee7db;
+  --bg-footer: #e5dbcd;
+  --text-primary: #17120f;
+  --text-secondary: #4c443b;
+  --text-muted: #71675c;
+  --text-on-accent: #f8f3ea;
+  --accent: #b51218;
+  --accent-bright: #d61a22;
   --accent-copper: #b51218;
   --accent-copper-bright: #d61a22;
-  --accent-copper-hover: #e01b24;
+  --accent-copper-hover: #e11d25;
   --accent-dark: #7d0d12;
-  --accent-light: #f4f4f4;
-  --border: rgba(16, 42, 76, 0.18);
-  --border-strong: rgba(16, 42, 76, 0.32);
-  --glass-tint: #f0f0f0;
-  --glass-border: rgba(16, 42, 76, 0.14);
-  --glass-highlight: rgba(255, 255, 255, 0.62);
-  --glass-shadow-inset: rgba(16, 42, 76, 0.08);
-  --glass-shadow: rgba(16, 42, 76, 0.16);
+  --accent-light: #f7d8da;
+  --border: rgba(181, 18, 24, 0.16);
+  --border-strong: rgba(181, 18, 24, 0.3);
+  --glass-tint: #fffaf2;
+  --glass-border: rgba(181, 18, 24, 0.14);
+  --glass-highlight: rgba(255, 255, 255, 0.68);
+  --glass-shadow-inset: rgba(55, 42, 30, 0.12);
+  --glass-shadow: rgba(55, 42, 30, 0.14);
   --glass-opacity: 0.62;
-  --shadow-soft: rgba(16, 42, 76, 0.10);
-  --shadow-medium: rgba(16, 42, 76, 0.16);
-  --shadow-deep-soft: rgba(16, 42, 76, 0.20);
-  --shadow-deep: rgba(16, 42, 76, 0.26);
-  --shadow-vignette: rgba(16, 42, 76, 0.20);
-  --shadow-heavy: rgba(16, 42, 76, 0.30);
-  --overlay-dark-strong: rgba(16, 42, 76, 0.72);
-  --bg-overlay-08: rgba(255, 255, 255, 0.08);
-  --bg-overlay-10: rgba(255, 255, 255, 0.10);
-  --bg-overlay-15: rgba(255, 255, 255, 0.15);
-  --bg-overlay-20: rgba(255, 255, 255, 0.20);
-  --bg-overlay-48: rgba(255, 255, 255, 0.48);
-  --bg-overlay-72: rgba(255, 255, 255, 0.72);
-  --bg-overlay-solid: rgba(238, 238, 238, 0.98);
-  --bg-surface-solid: rgba(224, 224, 224, 0.98);
+  --shadow-soft: rgba(0, 0, 0, 0.22);
+  --shadow-medium: rgba(0, 0, 0, 0.3);
+  --shadow-deep-soft: rgba(0, 0, 0, 0.35);
+  --shadow-deep: rgba(0, 0, 0, 0.5);
+  --shadow-vignette: rgba(0, 0, 0, 0.55);
+  --shadow-heavy: rgba(0, 0, 0, 0.6);
+  --overlay-dark-strong: rgba(0, 0, 0, 0.92);
+  --bg-overlay-08: rgba(8, 9, 9, 0.08);
+  --bg-overlay-10: rgba(8, 9, 9, 0.1);
+  --bg-overlay-15: rgba(8, 9, 9, 0.15);
+  --bg-overlay-20: rgba(8, 9, 9, 0.2);
+  --bg-overlay-48: rgba(8, 9, 9, 0.48);
+  --bg-overlay-72: rgba(8, 9, 9, 0.72);
+  --bg-overlay-solid: rgba(9, 10, 10, 0.98);
+  --bg-surface-solid: rgba(24, 25, 23, 0.98);
   --glow-copper-035: rgba(181, 18, 24, 0.035);
   --glow-copper-04: rgba(181, 18, 24, 0.04);
   --glow-copper-05: rgba(181, 18, 24, 0.05);
   --glow-copper-075: rgba(181, 18, 24, 0.075);
   --glow-copper-08: rgba(181, 18, 24, 0.08);
-  --glow-copper-20: rgba(181, 18, 24, 0.20);
+  --glow-copper-20: rgba(181, 18, 24, 0.2);
   --glow-copper-bright-08: rgba(214, 26, 34, 0.08);
-  --glow-copper-bright-10: rgba(214, 26, 34, 0.10);
+  --glow-copper-bright-10: rgba(214, 26, 34, 0.1);
   --glow-copper-bright-34: rgba(214, 26, 34, 0.34);
-  --glow-copper-bright-50: rgba(214, 26, 34, 0.50);
+  --glow-copper-bright-50: rgba(214, 26, 34, 0.5);
   --glow-copper-bright-75: rgba(214, 26, 34, 0.75);
-  --glow-copper-bright-80: rgba(214, 26, 34, 0.80);
+  --glow-copper-bright-80: rgba(214, 26, 34, 0.8);
   --champagne-overlay-025: rgba(16, 42, 76, 0.025);
   --champagne-overlay-035: rgba(16, 42, 76, 0.035);
   --champagne-overlay-045: rgba(16, 42, 76, 0.045);
   --champagne-overlay-05: rgba(16, 42, 76, 0.05);
   --champagne-overlay-055: rgba(16, 42, 76, 0.055);
   --champagne-overlay-08: rgba(16, 42, 76, 0.08);
-  --champagne-overlay-10: rgba(16, 42, 76, 0.10);
+  --champagne-overlay-10: rgba(16, 42, 76, 0.1);
   --champagne-overlay-11: rgba(16, 42, 76, 0.11);
   --champagne-overlay-13: rgba(16, 42, 76, 0.13);
   --champagne-overlay-15: rgba(16, 42, 76, 0.15);
   --champagne-overlay-16: rgba(16, 42, 76, 0.16);
-  --champagne-overlay-20: rgba(16, 42, 76, 0.20);
+  --champagne-overlay-20: rgba(16, 42, 76, 0.2);
   --champagne-overlay-22: rgba(16, 42, 76, 0.22);
   --champagne-overlay-25: rgba(16, 42, 76, 0.25);
   --champagne-overlay-28: rgba(16, 42, 76, 0.28);
-  --champagne-overlay-30: rgba(16, 42, 76, 0.30);
+  --champagne-overlay-30: rgba(16, 42, 76, 0.3);
   --champagne-overlay-35: rgba(16, 42, 76, 0.35);
   --champagne-overlay-38: rgba(16, 42, 76, 0.38);
-  --champagne-overlay-40: rgba(16, 42, 76, 0.40);
+  --champagne-overlay-40: rgba(16, 42, 76, 0.4);
   --champagne-overlay-45: rgba(16, 42, 76, 0.45);
   --champagne-overlay-48: rgba(16, 42, 76, 0.48);
-  --champagne-overlay-50: rgba(16, 42, 76, 0.50);
+  --champagne-overlay-50: rgba(16, 42, 76, 0.5);
   --champagne-overlay-55: rgba(16, 42, 76, 0.55);
-  --cream-overlay-07: rgba(16, 42, 76, 0.07);
-  --cream-overlay-12: rgba(16, 42, 76, 0.12);
-  --cream-overlay-14: rgba(16, 42, 76, 0.14);
-  --cream-overlay-28: rgba(16, 42, 76, 0.28);
-  --cream-overlay-30: rgba(16, 42, 76, 0.30);
-  --cream-overlay-32: rgba(16, 42, 76, 0.32);
-  --cream-overlay-35: rgba(16, 42, 76, 0.35);
-  --cream-overlay-36: rgba(16, 42, 76, 0.36);
-  --cream-overlay-38: rgba(16, 42, 76, 0.38);
-  --cream-overlay-40: rgba(16, 42, 76, 0.40);
-  --cream-overlay-42: rgba(16, 42, 76, 0.42);
-  --cream-overlay-45: rgba(16, 42, 76, 0.45);
-  --cream-overlay-48: rgba(16, 42, 76, 0.48);
-  --cream-overlay-50: rgba(16, 42, 76, 0.50);
-  --cream-overlay-52: rgba(16, 42, 76, 0.52);
-  --cream-overlay-55: rgba(16, 42, 76, 0.55);
-  --cream-overlay-58: rgba(16, 42, 76, 0.58);
-  --cream-overlay-60: rgba(16, 42, 76, 0.60);
-  --cream-overlay-62: rgba(16, 42, 76, 0.62);
-  --cream-overlay-68: rgba(16, 42, 76, 0.68);
-  --cream-overlay-70: rgba(16, 42, 76, 0.70);
-  --cream-overlay-75: rgba(16, 42, 76, 0.75);
-  --cream-overlay-82: rgba(16, 42, 76, 0.82);
+  --cream-overlay-07: rgba(200, 200, 200, 0.07);
+  --cream-overlay-12: rgba(200, 200, 200, 0.12);
+  --cream-overlay-14: rgba(200, 200, 200, 0.14);
+  --cream-overlay-28: rgba(200, 200, 200, 0.28);
+  --cream-overlay-30: rgba(200, 200, 200, 0.3);
+  --cream-overlay-32: rgba(200, 200, 200, 0.32);
+  --cream-overlay-35: rgba(200, 200, 200, 0.35);
+  --cream-overlay-36: rgba(200, 200, 200, 0.36);
+  --cream-overlay-38: rgba(200, 200, 200, 0.38);
+  --cream-overlay-40: rgba(200, 200, 200, 0.4);
+  --cream-overlay-42: rgba(200, 200, 200, 0.42);
+  --cream-overlay-45: rgba(200, 200, 200, 0.45);
+  --cream-overlay-48: rgba(200, 200, 200, 0.48);
+  --cream-overlay-50: rgba(200, 200, 200, 0.5);
+  --cream-overlay-52: rgba(200, 200, 200, 0.52);
+  --cream-overlay-55: rgba(200, 200, 200, 0.55);
+  --cream-overlay-58: rgba(200, 200, 200, 0.58);
+  --cream-overlay-60: rgba(200, 200, 200, 0.6);
+  --cream-overlay-62: rgba(200, 200, 200, 0.62);
+  --cream-overlay-68: rgba(200, 200, 200, 0.68);
+  --cream-overlay-70: rgba(200, 200, 200, 0.7);
+  --cream-overlay-75: rgba(200, 200, 200, 0.75);
+  --cream-overlay-82: rgba(200, 200, 200, 0.82);
   --white-overlay-006: rgba(255, 255, 255, 0.006);
   --white-overlay-012: rgba(255, 255, 255, 0.012);
   --white-overlay-015: rgba(255, 255, 255, 0.015);
   --white-overlay-025: rgba(255, 255, 255, 0.025);
   --project-red-glow: rgba(190, 30, 55, 0.14);
-  --project-green-glow: rgba(62, 122, 94, 0.10);
+  --project-green-glow: var(--project-green-glow);
   --project-gold-glow: rgba(210, 165, 80, 0.12);
   --serif: "Playfair Display", Georgia, serif;
   --sans: "Manrope", Arial, sans-serif;
@@ -3810,238 +3810,7 @@ img {
 }
 
 :root[data-theme="light"] {
-  color-scheme: light;
-  --bg-primary: #c8c8c8;
-  --bg-surface: #d4d4d4;
-  --bg-surface-strong: #bdbdbd;
-  --bg-surface-hover: #dedede;
-  --bg-surface-deep: #b8b8b8;
-  --bg-contact: #c2c2c2;
-  --bg-footer: #aaaaaa;
-  --text-primary: #102a4c;
-  --text-secondary: #29415f;
-  --text-muted: #5d6b7a;
-  --text-on-accent: #ffffff;
-  --accent: #102a4c;
-  --accent-bright: #1b3d67;
-  --accent-copper: #b51218;
-  --accent-copper-bright: #d61a22;
-  --accent-copper-hover: #e01b24;
-  --accent-dark: #7d0d12;
-  --accent-light: #f4f4f4;
-  --border: rgba(16, 42, 76, 0.18);
-  --border-strong: rgba(16, 42, 76, 0.32);
-  --glass-tint: #f0f0f0;
-  --glass-fallback: #d4d4d4;
-  --glass-bg: rgba(240, 240, 240, 0.62);
-  --glass-border: rgba(16, 42, 76, 0.14);
-  --glass-highlight: rgba(255, 255, 255, 0.62);
-  --glass-shadow-inset: rgba(16, 42, 76, 0.08);
-  --glass-shadow: rgba(16, 42, 76, 0.16);
-  --glass-sheen: rgba(255, 255, 255, 0.50);
-  --glass-sheen-strong: rgba(255, 255, 255, 0.68);
-  --glass-sheen-soft: rgba(255, 255, 255, 0.35);
   --glass-opacity: 0.62;
-  --shadow-soft: rgba(16, 42, 76, 0.10);
-  --shadow-medium: rgba(16, 42, 76, 0.16);
-  --shadow-deep-soft: rgba(16, 42, 76, 0.20);
-  --shadow-deep: rgba(16, 42, 76, 0.26);
-  --shadow-vignette: rgba(16, 42, 76, 0.20);
-  --shadow-heavy: rgba(16, 42, 76, 0.30);
-  --overlay-dark-strong: rgba(16, 42, 76, 0.72);
-  --bg-overlay-08: rgba(255, 255, 255, 0.08);
-  --bg-overlay-10: rgba(255, 255, 255, 0.10);
-  --bg-overlay-15: rgba(255, 255, 255, 0.15);
-  --bg-overlay-20: rgba(255, 255, 255, 0.20);
-  --bg-overlay-48: rgba(255, 255, 255, 0.48);
-  --bg-overlay-72: rgba(255, 255, 255, 0.72);
-  --bg-overlay-solid: rgba(238, 238, 238, 0.98);
-  --bg-surface-solid: rgba(224, 224, 224, 0.98);
-  --glow-copper-035: rgba(181, 18, 24, 0.035);
-  --glow-copper-04: rgba(181, 18, 24, 0.04);
-  --glow-copper-05: rgba(181, 18, 24, 0.05);
-  --glow-copper-075: rgba(181, 18, 24, 0.075);
-  --glow-copper-08: rgba(181, 18, 24, 0.08);
-  --glow-copper-20: rgba(181, 18, 24, 0.20);
-  --glow-copper-bright-08: rgba(214, 26, 34, 0.08);
-  --glow-copper-bright-10: rgba(214, 26, 34, 0.10);
-  --glow-copper-bright-34: rgba(214, 26, 34, 0.34);
-  --glow-copper-bright-50: rgba(214, 26, 34, 0.50);
-  --glow-copper-bright-75: rgba(214, 26, 34, 0.75);
-  --glow-copper-bright-80: rgba(214, 26, 34, 0.80);
-  --champagne-overlay-025: rgba(16, 42, 76, 0.025);
-  --champagne-overlay-035: rgba(16, 42, 76, 0.035);
-  --champagne-overlay-045: rgba(16, 42, 76, 0.045);
-  --champagne-overlay-05: rgba(16, 42, 76, 0.05);
-  --champagne-overlay-055: rgba(16, 42, 76, 0.055);
-  --champagne-overlay-08: rgba(16, 42, 76, 0.08);
-  --champagne-overlay-10: rgba(16, 42, 76, 0.10);
-  --champagne-overlay-11: rgba(16, 42, 76, 0.11);
-  --champagne-overlay-13: rgba(16, 42, 76, 0.13);
-  --champagne-overlay-15: rgba(16, 42, 76, 0.15);
-  --champagne-overlay-16: rgba(16, 42, 76, 0.16);
-  --champagne-overlay-20: rgba(16, 42, 76, 0.20);
-  --champagne-overlay-22: rgba(16, 42, 76, 0.22);
-  --champagne-overlay-25: rgba(16, 42, 76, 0.25);
-  --champagne-overlay-28: rgba(16, 42, 76, 0.28);
-  --champagne-overlay-30: rgba(16, 42, 76, 0.30);
-  --champagne-overlay-35: rgba(16, 42, 76, 0.35);
-  --champagne-overlay-38: rgba(16, 42, 76, 0.38);
-  --champagne-overlay-40: rgba(16, 42, 76, 0.40);
-  --champagne-overlay-45: rgba(16, 42, 76, 0.45);
-  --champagne-overlay-48: rgba(16, 42, 76, 0.48);
-  --champagne-overlay-50: rgba(16, 42, 76, 0.50);
-  --champagne-overlay-55: rgba(16, 42, 76, 0.55);
-  --cream-overlay-07: rgba(16, 42, 76, 0.07);
-  --cream-overlay-12: rgba(16, 42, 76, 0.12);
-  --cream-overlay-14: rgba(16, 42, 76, 0.14);
-  --cream-overlay-28: rgba(16, 42, 76, 0.28);
-  --cream-overlay-30: rgba(16, 42, 76, 0.30);
-  --cream-overlay-32: rgba(16, 42, 76, 0.32);
-  --cream-overlay-35: rgba(16, 42, 76, 0.35);
-  --cream-overlay-36: rgba(16, 42, 76, 0.36);
-  --cream-overlay-38: rgba(16, 42, 76, 0.38);
-  --cream-overlay-40: rgba(16, 42, 76, 0.40);
-  --cream-overlay-42: rgba(16, 42, 76, 0.42);
-  --cream-overlay-45: rgba(16, 42, 76, 0.45);
-  --cream-overlay-48: rgba(16, 42, 76, 0.48);
-  --cream-overlay-50: rgba(16, 42, 76, 0.50);
-  --cream-overlay-52: rgba(16, 42, 76, 0.52);
-  --cream-overlay-55: rgba(16, 42, 76, 0.55);
-  --cream-overlay-58: rgba(16, 42, 76, 0.58);
-  --cream-overlay-60: rgba(16, 42, 76, 0.60);
-  --cream-overlay-62: rgba(16, 42, 76, 0.62);
-  --cream-overlay-68: rgba(16, 42, 76, 0.68);
-  --cream-overlay-70: rgba(16, 42, 76, 0.70);
-  --cream-overlay-75: rgba(16, 42, 76, 0.75);
-  --cream-overlay-82: rgba(16, 42, 76, 0.82);
-  --white-overlay-006: rgba(255, 255, 255, 0.006);
-  --white-overlay-012: rgba(255, 255, 255, 0.012);
-  --white-overlay-015: rgba(255, 255, 255, 0.015);
-  --white-overlay-025: rgba(255, 255, 255, 0.025);
-  --project-red-glow: rgba(154, 38, 57, 0.12);
-  --project-green-glow: rgba(62, 122, 94, 0.10);
-  --project-gold-glow: rgba(161, 122, 50, 0.11);
-  --button-shine-primary: rgba(255, 255, 255, 0.50);
-  --button-shine-secondary: rgba(16, 42, 76, 0.12);
-  --hero-grain-a: rgba(255, 255, 255, 0.22);
-  --hero-grain-b: rgba(255, 255, 255, 0.10);
-  --vignette-a: rgba(16, 42, 76, 0.12);
-  --vignette-b: rgba(16, 42, 76, 0.08);
-  --noise-opacity: 0.022;
-  --vignette-opacity: 0.55;
-  --focus-ring: #b51218;
-}
-
-
-/* =========================================================
-   LIGHT THEME ONLY — DARK MODE DISABLED
-========================================================= */
-
-:root[data-theme="dark"] {
-  color-scheme: light;
-  --bg-primary: #c8c8c8;
-  --bg-surface: #d4d4d4;
-  --bg-surface-strong: #bdbdbd;
-  --bg-surface-hover: #dedede;
-  --bg-surface-deep: #b8b8b8;
-  --bg-contact: #c2c2c2;
-  --bg-footer: #aaaaaa;
-  --text-primary: #102a4c;
-  --text-secondary: #29415f;
-  --text-muted: #5d6b7a;
-  --text-on-accent: #ffffff;
-  --accent: #102a4c;
-  --accent-bright: #1b3d67;
-  --accent-copper: #b51218;
-  --accent-copper-bright: #d61a22;
-  --accent-copper-hover: #e01b24;
-  --accent-dark: #7d0d12;
-  --accent-light: #f4f4f4;
-  --border: rgba(16, 42, 76, 0.18);
-  --border-strong: rgba(16, 42, 76, 0.32);
-  --glass-tint: #f0f0f0;
-  --glass-fallback: #d4d4d4;
-  --glass-bg: rgba(240, 240, 240, 0.62);
-  --glass-border: rgba(16, 42, 76, 0.14);
-  --glass-highlight: rgba(255, 255, 255, 0.62);
-  --glass-shadow-inset: rgba(16, 42, 76, 0.08);
-  --glass-shadow: rgba(16, 42, 76, 0.16);
-  --glass-opacity: 0.62;
-  --shadow-soft: rgba(16, 42, 76, 0.10);
-  --shadow-medium: rgba(16, 42, 76, 0.16);
-  --shadow-deep-soft: rgba(16, 42, 76, 0.20);
-  --shadow-deep: rgba(16, 42, 76, 0.26);
-  --shadow-vignette: rgba(16, 42, 76, 0.20);
-  --shadow-heavy: rgba(16, 42, 76, 0.30);
-  --overlay-dark-strong: rgba(16, 42, 76, 0.72);
-  --bg-overlay-08: rgba(255, 255, 255, 0.08);
-  --bg-overlay-10: rgba(255, 255, 255, 0.10);
-  --bg-overlay-15: rgba(255, 255, 255, 0.15);
-  --bg-overlay-20: rgba(255, 255, 255, 0.20);
-  --bg-overlay-48: rgba(255, 255, 255, 0.48);
-  --bg-overlay-72: rgba(255, 255, 255, 0.72);
-  --bg-overlay-solid: rgba(238, 238, 238, 0.98);
-  --bg-surface-solid: rgba(224, 224, 224, 0.98);
-  --glow-copper-035: rgba(181, 18, 24, 0.035);
-  --glow-copper-04: rgba(181, 18, 24, 0.04);
-  --glow-copper-05: rgba(181, 18, 24, 0.05);
-  --glow-copper-075: rgba(181, 18, 24, 0.075);
-  --glow-copper-08: rgba(181, 18, 24, 0.08);
-  --glow-copper-20: rgba(181, 18, 24, 0.20);
-  --glow-copper-bright-08: rgba(214, 26, 34, 0.08);
-  --glow-copper-bright-10: rgba(214, 26, 34, 0.10);
-  --glow-copper-bright-34: rgba(214, 26, 34, 0.34);
-  --glow-copper-bright-50: rgba(214, 26, 34, 0.50);
-  --glow-copper-bright-75: rgba(214, 26, 34, 0.75);
-  --glow-copper-bright-80: rgba(214, 26, 34, 0.80);
-  --champagne-overlay-025: rgba(16, 42, 76, 0.025);
-  --champagne-overlay-035: rgba(16, 42, 76, 0.035);
-  --champagne-overlay-045: rgba(16, 42, 76, 0.045);
-  --champagne-overlay-05: rgba(16, 42, 76, 0.05);
-  --champagne-overlay-055: rgba(16, 42, 76, 0.055);
-  --champagne-overlay-08: rgba(16, 42, 76, 0.08);
-  --champagne-overlay-10: rgba(16, 42, 76, 0.10);
-  --champagne-overlay-11: rgba(16, 42, 76, 0.11);
-  --champagne-overlay-13: rgba(16, 42, 76, 0.13);
-  --champagne-overlay-15: rgba(16, 42, 76, 0.15);
-  --champagne-overlay-16: rgba(16, 42, 76, 0.16);
-  --champagne-overlay-20: rgba(16, 42, 76, 0.20);
-  --champagne-overlay-22: rgba(16, 42, 76, 0.22);
-  --champagne-overlay-25: rgba(16, 42, 76, 0.25);
-  --champagne-overlay-28: rgba(16, 42, 76, 0.28);
-  --champagne-overlay-30: rgba(16, 42, 76, 0.30);
-  --champagne-overlay-35: rgba(16, 42, 76, 0.35);
-  --champagne-overlay-38: rgba(16, 42, 76, 0.38);
-  --champagne-overlay-40: rgba(16, 42, 76, 0.40);
-  --champagne-overlay-45: rgba(16, 42, 76, 0.45);
-  --champagne-overlay-48: rgba(16, 42, 76, 0.48);
-  --champagne-overlay-50: rgba(16, 42, 76, 0.50);
-  --champagne-overlay-55: rgba(16, 42, 76, 0.55);
-  --cream-overlay-07: rgba(16, 42, 76, 0.07);
-  --cream-overlay-12: rgba(16, 42, 76, 0.12);
-  --cream-overlay-14: rgba(16, 42, 76, 0.14);
-  --cream-overlay-28: rgba(16, 42, 76, 0.28);
-  --cream-overlay-30: rgba(16, 42, 76, 0.30);
-  --cream-overlay-32: rgba(16, 42, 76, 0.32);
-  --cream-overlay-35: rgba(16, 42, 76, 0.35);
-  --cream-overlay-36: rgba(16, 42, 76, 0.36);
-  --cream-overlay-38: rgba(16, 42, 76, 0.38);
-  --cream-overlay-40: rgba(16, 42, 76, 0.40);
-  --cream-overlay-42: rgba(16, 42, 76, 0.42);
-  --cream-overlay-45: rgba(16, 42, 76, 0.45);
-  --cream-overlay-48: rgba(16, 42, 76, 0.48);
-  --cream-overlay-50: rgba(16, 42, 76, 0.50);
-  --cream-overlay-52: rgba(16, 42, 76, 0.52);
-  --cream-overlay-55: rgba(16, 42, 76, 0.55);
-  --cream-overlay-58: rgba(16, 42, 76, 0.58);
-  --cream-overlay-60: rgba(16, 42, 76, 0.60);
-  --cream-overlay-62: rgba(16, 42, 76, 0.62);
-  --cream-overlay-68: rgba(16, 42, 76, 0.68);
-  --cream-overlay-70: rgba(16, 42, 76, 0.70);
-  --cream-overlay-75: rgba(16, 42, 76, 0.75);
-  --cream-overlay-82: rgba(16, 42, 76, 0.82);
-  --focus-ring: #b51218;
 }
 
 /* =========================================================
@@ -4050,7 +3819,7 @@ img {
 
 :root {
   --glass-fallback: var(--bg-surface-strong);
-  --glass-bg: rgba(240, 240, 240, 0.62);
+  --glass-bg: rgba(244, 240, 232, 0.06);
   --glass-sheen: rgba(255, 255, 255, 0.08);
   --glass-sheen-strong: rgba(255, 255, 255, 0.08);
   --glass-sheen-soft: rgba(255, 255, 255, 0.04);
@@ -4062,13 +3831,13 @@ img {
   --vignette-opacity: 1;
   --focus-ring: var(--accent-bright);
   --button-shine-primary: rgba(255, 255, 255, 0.24);
-  --button-shine-secondary: rgba(16, 42, 76, 0.12);
-  --hero-grain-a: rgba(255, 255, 255, 0.22);
-  --hero-grain-b: rgba(255, 255, 255, 0.10);
-  --vignette-a: rgba(16, 42, 76, 0.12);
-  --vignette-b: rgba(16, 42, 76, 0.08);
-  --print-bg: #c8c8c8;
-  --print-text: #102a4c;
+  --button-shine-secondary: rgba(216, 199, 165, 0.12);
+  --hero-grain-a: rgba(8, 9, 9, 0.2);
+  --hero-grain-b: rgba(8, 9, 9, 0.1);
+  --vignette-a: rgba(0, 0, 0, 0.55);
+  --vignette-b: rgba(0, 0, 0, 0.35);
+  --print-bg: #f4f0e8;
+  --print-text: #17120f;
 }
 
 :root[data-theme="light"] {
@@ -6766,134 +6535,63 @@ canvas {
 }
 
 /* =========================================================
-   SILVER + SIGNAL RED POLISHED SURFACE
-   Light theme only — dark mode removed visually
+   LIGHT / TITANIUM RED POLISH
+   Single-theme presentation: light mode only.
 ========================================================= */
-
-html,
-body {
-  background: #c8c8c8;
-  color-scheme: light !important;
-}
 
 .theme-toggle {
   display: none !important;
 }
 
-.nav-actions {
-  gap: 0;
-}
-
-.site-shell,
-.resume-page {
-  background-color: #c8c8c8;
+html,
+body,
+.site-shell {
+  background-color: #f4f0e8;
 }
 
 .site-shell {
   background:
-    radial-gradient(ellipse 42% 18% at 8% 14%, rgba(181, 18, 24, 0.13), transparent 72%),
-    radial-gradient(ellipse 35% 16% at 91% 30%, rgba(181, 18, 24, 0.10), transparent 74%),
-    radial-gradient(ellipse 46% 14% at 24% 52%, rgba(181, 18, 24, 0.08), transparent 75%),
-    radial-gradient(ellipse 38% 18% at 78% 72%, rgba(181, 18, 24, 0.11), transparent 74%),
-    linear-gradient(112deg, transparent 0%, rgba(255,255,255,0.20) 12%, transparent 24%, transparent 72%, rgba(255,255,255,0.16) 84%, transparent 96%),
-    linear-gradient(168deg, transparent 0%, rgba(181,18,24,0.055) 17%, transparent 31%, transparent 61%, rgba(181,18,24,0.045) 78%, transparent 91%),
-    #c8c8c8;
+    radial-gradient(circle at 82% 8%, rgba(181, 18, 24, 0.075), transparent 24%),
+    radial-gradient(circle at 8% 32%, rgba(181, 18, 24, 0.045), transparent 22%),
+    radial-gradient(circle at 90% 78%, rgba(16, 42, 76, 0.045), transparent 26%),
+    linear-gradient(115deg, rgba(181, 18, 24, 0.035), transparent 18%, transparent 78%, rgba(181, 18, 24, 0.045)),
+    #f4f0e8;
 }
 
-/* Fine diagonal polish marks across the full canvas */
+/* Subtle polished red brushing — white/silver remains dominant. */
 .site-shell::after {
   content: "";
   position: fixed;
-  inset: -12%;
-  z-index: 0;
+  inset: 0;
+  z-index: 1;
   pointer-events: none;
-  opacity: 0.42;
+  opacity: 0.5;
   background:
-    repeating-linear-gradient(
-      112deg,
-      transparent 0,
-      transparent 68px,
-      rgba(181, 18, 24, 0.035) 69px,
-      rgba(181, 18, 24, 0.035) 71px,
-      transparent 72px,
-      transparent 146px
-    ),
-    linear-gradient(
-      104deg,
-      transparent 8%,
-      rgba(181, 18, 24, 0.075) 10%,
-      transparent 13%,
-      transparent 34%,
-      rgba(181, 18, 24, 0.055) 37%,
-      transparent 41%,
-      transparent 64%,
-      rgba(181, 18, 24, 0.065) 68%,
-      transparent 72%,
-      transparent 90%
-    );
+    linear-gradient(116deg, transparent 0%, rgba(181, 18, 24, 0.025) 18%, transparent 31%),
+    linear-gradient(116deg, transparent 35%, rgba(181, 18, 24, 0.035) 48%, transparent 62%),
+    linear-gradient(116deg, transparent 67%, rgba(181, 18, 24, 0.025) 80%, transparent 92%);
   mix-blend-mode: multiply;
-  transform: rotate(-2deg);
 }
 
-/* Keep content above the polish layer */
-.site-header,
-.hero-section,
-.section,
-.projects-section,
-.experience-section,
-.contact,
-.footer,
-.resume-page > *,
-.resume-sheet {
-  position: relative;
-  z-index: 2;
-}
-
-/* Red polished strokes around major content surfaces */
-.section::before,
-.projects-section::before,
-.experience-section::before,
-.contact::before {
-  content: "";
-  position: absolute;
-  left: 4%;
-  right: 4%;
-  top: 0;
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(181,18,24,0.08) 10%,
-    rgba(181,18,24,0.42) 25%,
-    rgba(181,18,24,0.12) 44%,
-    transparent 58%,
-    rgba(181,18,24,0.28) 78%,
-    transparent 100%
-  );
-  opacity: 0.85;
-  pointer-events: none;
-}
-
-/* Silver surfaces with a subtle red polish edge */
-.liquid-glass,
-.project-showcase,
-.education-card,
-.skill-card,
-.experience-popup,
-.resume-sheet {
-  border-color: rgba(16, 42, 76, 0.16);
+.nav-pill {
+  border-color: rgba(181, 18, 24, 0.16);
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.62),
-    inset 0 -1px 0 rgba(16,42,76,0.06),
-    0 18px 55px rgba(16,42,76,0.12);
+    0 20px 80px rgba(55, 42, 30, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.68),
+    0 0 0 1px rgba(181, 18, 24, 0.025);
 }
 
-/* Red highlight on interactive controls */
+.hero-name-background span {
+  color: rgba(16, 42, 76, 0.10);
+  text-shadow:
+    0 0 28px rgba(181, 18, 24, 0.025),
+    0 0 90px rgba(181, 18, 24, 0.035);
+}
+
 .button-primary,
 .nav-cta {
   background: #b51218;
-  color: #ffffff;
-  box-shadow: 0 12px 36px rgba(181,18,24,0.22);
+  color: #fffaf2;
 }
 
 .button-primary:hover,
@@ -6901,87 +6599,56 @@ body {
   background: #d61a22;
 }
 
-.button-secondary:hover,
-.showcase-button:hover {
-  border-color: rgba(181,18,24,0.42);
-  color: #b51218;
+.button-secondary {
+  border-color: rgba(181, 18, 24, 0.22);
+  background: rgba(255, 255, 255, 0.28);
+  color: #102a4c;
+}
+
+.button-secondary:hover {
+  border-color: rgba(181, 18, 24, 0.48);
 }
 
 .eyebrow,
-.section-eyebrow,
-.showcase-category,
-.experience-type {
-  color: #b51218;
+.hero-title em,
+.stat strong,
+.scroll-circle {
+  color: #102a4c;
 }
 
 .eyebrow-line,
-.showcase-line,
-.experience-divider {
+.nav-links a::after,
+.quote-line {
   background: #b51218;
 }
 
-.nav-links a::after,
-.experience-item:hover .experience-divider,
-.showcase-progress span {
-  background: #b51218;
+.scene-orbit {
+  border-color: rgba(181, 18, 24, 0.34);
+}
+
+.scene-orbit-two {
+  border-color: rgba(16, 42, 76, 0.16);
 }
 
 .scene-particle,
 .intelligence-dot {
-  background: #d61a22;
-  box-shadow: 0 0 12px rgba(214,26,34,0.55);
+  background: #b51218;
+  box-shadow: 0 0 12px rgba(181, 18, 24, 0.42);
 }
 
-.hero-name-background span {
-  color: rgba(16,42,76,0.12);
-  text-shadow:
-    0 0 28px rgba(181,18,24,0.05),
-    0 0 90px rgba(16,42,76,0.06);
+::selection {
+  background: #b51218;
+  color: #ffffff;
 }
 
-/* Red brushed accent on major section headings */
-.section-title::after,
-.projects-heading::after,
-.experience-heading::after {
-  content: "";
-  display: block;
-  width: min(180px, 26vw);
-  height: 2px;
-  margin-top: 18px;
-  background: linear-gradient(90deg, #b51218, rgba(181,18,24,0.18), transparent);
-  transform: skewX(-24deg);
-  transform-origin: left center;
-  opacity: 0.85;
+/* Never allow a stale dark-theme attribute to turn the site dark. */
+html[data-theme="dark"],
+html[data-theme="dark"] body,
+html[data-theme="dark"] .site-shell {
+  background-color: #f4f0e8 !important;
+  color: #17120f;
 }
 
-/* Preserve readability over the silver background */
-.hero-title,
-.section-title,
-.projects-heading,
-.experience-heading,
-.showcase-copy h3,
-.education-card h3,
-.contact-title {
-  color: #102a4c;
-}
-
-.hero-description,
-.section-description,
-.projects-description,
-.experience-summary,
-.contact-description {
-  color: rgba(16,42,76,0.70);
-}
-
-/* Light-theme override for the existing light-specific atmospheric rules */
-:root[data-theme="light"] .site-shell,
-:root[data-theme="dark"] .site-shell {
-  background:
-    radial-gradient(ellipse 42% 18% at 8% 14%, rgba(181, 18, 24, 0.13), transparent 72%),
-    radial-gradient(ellipse 35% 16% at 91% 30%, rgba(181, 18, 24, 0.10), transparent 74%),
-    radial-gradient(ellipse 46% 14% at 24% 52%, rgba(181, 18, 24, 0.08), transparent 75%),
-    radial-gradient(ellipse 38% 18% at 78% 72%, rgba(181, 18, 24, 0.11), transparent 74%),
-    linear-gradient(112deg, transparent 0%, rgba(255,255,255,0.20) 12%, transparent 24%, transparent 72%, rgba(255,255,255,0.16) 84%, transparent 96%),
-    linear-gradient(168deg, transparent 0%, rgba(181,18,24,0.055) 17%, transparent 31%, transparent 61%, rgba(181,18,24,0.045) 78%, transparent 91%),
-    #c8c8c8;
+html[data-theme="dark"] .theme-toggle {
+  display: none !important;
 }
