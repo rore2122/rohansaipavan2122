@@ -877,7 +877,7 @@ export default function Home() {
 
           <Reveal className="education-reveal">
           <div className="education-grid">
-            <article className="education-card">
+            <article className="education-card education-card-srm">
               <span>2024 — 2026</span>
 
               <h3>MBA — AI &amp; Data Science</h3>
@@ -887,7 +887,7 @@ export default function Home() {
               <strong>CGPA 9.04</strong>
             </article>
 
-            <article className="education-card">
+            <article className="education-card education-card-kbn">
               <span>2021 — 2024</span>
 
               <h3>B.Sc. — Data Science</h3>
