@@ -6,19 +6,19 @@
 
 :root {
   color-scheme: light;
-  --bg-primary: #f4f0e8;
-  --bg-surface: #eee8dd;
-  --bg-surface-strong: #e6ddd0;
-  --bg-surface-hover: #ded4c6;
-  --bg-surface-deep: #e9e1d5;
-  --bg-contact: #eee7db;
-  --bg-footer: #e5dbcd;
+  --bg-primary: #e7e9ec;
+  --bg-surface: #f3f4f6;
+  --bg-surface-strong: #ffffff;
+  --bg-surface-hover: #eef0f3;
+  --bg-surface-deep: #dfe2e6;
+  --bg-contact: #eef0f2;
+  --bg-footer: #dfe2e6;
   --text-primary: #17120f;
-  --text-secondary: #4c443b;
-  --text-muted: #71675c;
+  --text-secondary: #102a4c;
+  --text-muted: #53657b;
   --text-on-accent: #f8f3ea;
-  --accent: #b51218;
-  --accent-bright: #d61a22;
+  --accent: #102a4c;
+  --accent-bright: #b51218;
   --accent-copper: #b51218;
   --accent-copper-bright: #d61a22;
   --accent-copper-hover: #e11d25;
@@ -26,8 +26,8 @@
   --accent-light: #f7d8da;
   --border: rgba(181, 18, 24, 0.16);
   --border-strong: rgba(181, 18, 24, 0.3);
-  --glass-tint: #fffaf2;
-  --glass-border: rgba(181, 18, 24, 0.14);
+  --glass-tint: #ffffff;
+  --glass-border: rgba(16, 42, 76, 0.16);
   --glass-highlight: rgba(255, 255, 255, 0.68);
   --glass-shadow-inset: rgba(55, 42, 30, 0.12);
   --glass-shadow: rgba(55, 42, 30, 0.14);
@@ -45,8 +45,8 @@
   --bg-overlay-20: rgba(8, 9, 9, 0.2);
   --bg-overlay-48: rgba(8, 9, 9, 0.48);
   --bg-overlay-72: rgba(8, 9, 9, 0.72);
-  --bg-overlay-solid: rgba(9, 10, 10, 0.98);
-  --bg-surface-solid: rgba(24, 25, 23, 0.98);
+  --bg-overlay-solid: rgba(255, 255, 255, 0.98);
+  --bg-surface-solid: rgba(255, 255, 255, 0.98);
   --glow-copper-035: rgba(181, 18, 24, 0.035);
   --glow-copper-04: rgba(181, 18, 24, 0.04);
   --glow-copper-05: rgba(181, 18, 24, 0.05);
@@ -82,29 +82,29 @@
   --champagne-overlay-48: rgba(16, 42, 76, 0.48);
   --champagne-overlay-50: rgba(16, 42, 76, 0.5);
   --champagne-overlay-55: rgba(16, 42, 76, 0.55);
-  --cream-overlay-07: rgba(200, 200, 200, 0.07);
-  --cream-overlay-12: rgba(200, 200, 200, 0.12);
-  --cream-overlay-14: rgba(200, 200, 200, 0.14);
-  --cream-overlay-28: rgba(200, 200, 200, 0.28);
-  --cream-overlay-30: rgba(200, 200, 200, 0.3);
-  --cream-overlay-32: rgba(200, 200, 200, 0.32);
-  --cream-overlay-35: rgba(200, 200, 200, 0.35);
-  --cream-overlay-36: rgba(200, 200, 200, 0.36);
-  --cream-overlay-38: rgba(200, 200, 200, 0.38);
-  --cream-overlay-40: rgba(200, 200, 200, 0.4);
-  --cream-overlay-42: rgba(200, 200, 200, 0.42);
-  --cream-overlay-45: rgba(200, 200, 200, 0.45);
-  --cream-overlay-48: rgba(200, 200, 200, 0.48);
-  --cream-overlay-50: rgba(200, 200, 200, 0.5);
-  --cream-overlay-52: rgba(200, 200, 200, 0.52);
-  --cream-overlay-55: rgba(200, 200, 200, 0.55);
-  --cream-overlay-58: rgba(200, 200, 200, 0.58);
-  --cream-overlay-60: rgba(200, 200, 200, 0.6);
-  --cream-overlay-62: rgba(200, 200, 200, 0.62);
-  --cream-overlay-68: rgba(200, 200, 200, 0.68);
-  --cream-overlay-70: rgba(200, 200, 200, 0.7);
-  --cream-overlay-75: rgba(200, 200, 200, 0.75);
-  --cream-overlay-82: rgba(200, 200, 200, 0.82);
+  --cream-overlay-07: rgba(16, 42, 76, 0.07);
+  --cream-overlay-12: rgba(16, 42, 76, 0.12);
+  --cream-overlay-14: rgba(16, 42, 76, 0.14);
+  --cream-overlay-28: rgba(16, 42, 76, 0.28);
+  --cream-overlay-30: rgba(16, 42, 76, 0.3);
+  --cream-overlay-32: rgba(16, 42, 76, 0.32);
+  --cream-overlay-35: rgba(16, 42, 76, 0.35);
+  --cream-overlay-36: rgba(16, 42, 76, 0.36);
+  --cream-overlay-38: rgba(16, 42, 76, 0.38);
+  --cream-overlay-40: rgba(16, 42, 76, 0.4);
+  --cream-overlay-42: rgba(16, 42, 76, 0.42);
+  --cream-overlay-45: rgba(16, 42, 76, 0.45);
+  --cream-overlay-48: rgba(16, 42, 76, 0.48);
+  --cream-overlay-50: rgba(16, 42, 76, 0.5);
+  --cream-overlay-52: rgba(16, 42, 76, 0.52);
+  --cream-overlay-55: rgba(16, 42, 76, 0.55);
+  --cream-overlay-58: rgba(16, 42, 76, 0.58);
+  --cream-overlay-60: rgba(16, 42, 76, 0.6);
+  --cream-overlay-62: rgba(16, 42, 76, 0.62);
+  --cream-overlay-68: rgba(16, 42, 76, 0.68);
+  --cream-overlay-70: rgba(16, 42, 76, 0.7);
+  --cream-overlay-75: rgba(16, 42, 76, 0.75);
+  --cream-overlay-82: rgba(16, 42, 76, 0.82);
   --white-overlay-006: rgba(255, 255, 255, 0.006);
   --white-overlay-012: rgba(255, 255, 255, 0.012);
   --white-overlay-015: rgba(255, 255, 255, 0.015);
@@ -268,7 +268,7 @@ img {
 .nav-links a {
   position: relative;
 
-  color: var(--cream-overlay-60);
+  color: #102a4c;
 
   font-size: 9px;
   font-weight: 600;
@@ -4302,18 +4302,18 @@ body,
 }
 
 /* Light-mode grain and vignette */
-:root[data-theme="light"] .site-shell {
+.site-shell {
   background:
     radial-gradient(circle at 76% 12%, var(--glow-copper-075), transparent 23%),
     radial-gradient(circle at 15% 65%, var(--champagne-overlay-05), transparent 28%),
     var(--bg-primary);
 }
 
-:root[data-theme="light"] .hero-grain {
+.hero-grain {
   background: linear-gradient(90deg, var(--hero-grain-a), transparent 35%, transparent 70%, var(--hero-grain-b));
 }
 
-:root[data-theme="light"] .hero-vignette {
+.hero-vignette {
   box-shadow: inset 0 0 180px var(--vignette-a), inset 0 -100px 150px var(--vignette-b);
 }
 
@@ -6549,106 +6549,440 @@ body,
   background-color: #f4f0e8;
 }
 
-.site-shell {
-  background:
-    radial-gradient(circle at 82% 8%, rgba(181, 18, 24, 0.075), transparent 24%),
-    radial-gradient(circle at 8% 32%, rgba(181, 18, 24, 0.045), transparent 22%),
-    radial-gradient(circle at 90% 78%, rgba(16, 42, 76, 0.045), transparent 26%),
-    linear-gradient(115deg, rgba(181, 18, 24, 0.035), transparent 18%, transparent 78%, rgba(181, 18, 24, 0.045)),
-    #f4f0e8;
+/* =========================================================
+   FINAL LIGHT / TITANIUM POLISH
+   Silver remains the dominant surface.
+   Red is used only as a restrained polished accent.
+========================================================= */
+
+html,
+body {
+  background: #e7e9ec;
+  color: #17191c;
 }
 
-/* Subtle polished red brushing — white/silver remains dominant. */
+body {
+  background-color: #e7e9ec;
+}
+
+.site-shell {
+  background:
+    linear-gradient(
+      115deg,
+      rgba(255, 255, 255, 0.78) 0%,
+      rgba(231, 233, 236, 0.96) 42%,
+      rgba(255, 255, 255, 0.82) 100%
+    ) !important;
+}
+
+/* Very subtle brushed-red polish. No red background fill. */
 .site-shell::after {
   content: "";
   position: fixed;
   inset: 0;
   z-index: 1;
   pointer-events: none;
-  opacity: 0.5;
+  opacity: 0.22;
   background:
-    linear-gradient(116deg, transparent 0%, rgba(181, 18, 24, 0.025) 18%, transparent 31%),
-    linear-gradient(116deg, transparent 35%, rgba(181, 18, 24, 0.035) 48%, transparent 62%),
-    linear-gradient(116deg, transparent 67%, rgba(181, 18, 24, 0.025) 80%, transparent 92%);
+    linear-gradient(
+      116deg,
+      transparent 0%,
+      rgba(181, 18, 24, 0.018) 20%,
+      transparent 34%
+    ),
+    linear-gradient(
+      116deg,
+      transparent 43%,
+      rgba(181, 18, 24, 0.024) 52%,
+      transparent 63%
+    ),
+    linear-gradient(
+      116deg,
+      transparent 70%,
+      rgba(181, 18, 24, 0.016) 82%,
+      transparent 94%
+    );
   mix-blend-mode: multiply;
 }
 
+/* Navigation must remain readable on silver. */
 .nav-pill {
-  border-color: rgba(181, 18, 24, 0.16);
+  background: rgba(255, 255, 255, 0.78) !important;
+  border-color: rgba(16, 42, 76, 0.16) !important;
   box-shadow:
-    0 20px 80px rgba(55, 42, 30, 0.14),
-    inset 0 1px 0 rgba(255, 255, 255, 0.68),
-    0 0 0 1px rgba(181, 18, 24, 0.025);
+    0 18px 55px rgba(16, 42, 76, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.92),
+    0 0 0 1px rgba(181, 18, 24, 0.035) !important;
 }
 
-.hero-name-background span {
-  color: rgba(16, 42, 76, 0.10);
-  text-shadow:
-    0 0 28px rgba(181, 18, 24, 0.025),
-    0 0 90px rgba(181, 18, 24, 0.035);
+.nav-links a {
+  color: #102a4c !important;
+  opacity: 1 !important;
+}
+
+.nav-links a:hover {
+  color: #b51218 !important;
+}
+
+.nav-links a::after {
+  background: #b51218 !important;
+}
+
+/* Keep section/body typography crisp. */
+.hero-copy,
+.section-label,
+.section-title,
+.experience-role,
+.experience-company,
+.skill-card,
+.skill-card h3,
+.skill-row,
+.skill-row span,
+.education-card,
+.project-showcase,
+.contact,
+.footer {
+  color: #17191c;
+}
+
+.hero-desc,
+.experience-company,
+.skill-row span,
+.education-card p,
+.project-description,
+.contact-description {
+  color: #31455f !important;
+  opacity: 1 !important;
+}
+
+.eyebrow,
+.hero-title em {
+  color: #102a4c !important;
+}
+
+.eyebrow-line,
+.quote-line {
+  background: #b51218 !important;
 }
 
 .button-primary,
 .nav-cta {
-  background: #b51218;
-  color: #fffaf2;
+  background: #b51218 !important;
+  color: #ffffff !important;
 }
 
 .button-primary:hover,
 .nav-cta:hover {
-  background: #d61a22;
+  background: #d61a22 !important;
 }
 
 .button-secondary {
-  border-color: rgba(181, 18, 24, 0.22);
-  background: rgba(255, 255, 255, 0.28);
-  color: #102a4c;
+  background: rgba(255, 255, 255, 0.72) !important;
+  border-color: rgba(16, 42, 76, 0.20) !important;
+  color: #102a4c !important;
 }
 
 .button-secondary:hover {
-  border-color: rgba(181, 18, 24, 0.48);
+  border-color: rgba(181, 18, 24, 0.48) !important;
+  color: #b51218 !important;
 }
 
-.eyebrow,
-.hero-title em,
-.stat strong,
-.scroll-circle {
-  color: #102a4c;
+/* Stats: navy numbers, restrained red separators. */
+.stat strong {
+  color: #102a4c !important;
 }
 
-.eyebrow-line,
-.nav-links a::after,
-.quote-line {
-  background: #b51218;
+.stat,
+.stat-block {
+  border-color: rgba(181, 18, 24, 0.16) !important;
 }
 
-.scene-orbit {
-  border-color: rgba(181, 18, 24, 0.34);
+/* Skills: white/silver cards, navy text, red status labels. */
+.skill-card {
+  background: rgba(255, 255, 255, 0.82) !important;
+  border-color: rgba(16, 42, 76, 0.14) !important;
 }
 
-.scene-orbit-two {
-  border-color: rgba(16, 42, 76, 0.16);
+.skill-card:hover {
+  background: #ffffff !important;
 }
 
-.scene-particle,
-.intelligence-dot {
-  background: #b51218;
-  box-shadow: 0 0 12px rgba(181, 18, 24, 0.42);
+.skill-card-number {
+  color: rgba(16, 42, 76, 0.48) !important;
 }
 
-::selection {
-  background: #b51218;
-  color: #ffffff;
+.skill-card h3 {
+  color: #17191c !important;
 }
 
-/* Never allow a stale dark-theme attribute to turn the site dark. */
-html[data-theme="dark"],
-html[data-theme="dark"] body,
-html[data-theme="dark"] .site-shell {
-  background-color: #f4f0e8 !important;
-  color: #17120f;
+.skill-list {
+  border-color: rgba(16, 42, 76, 0.14) !important;
 }
 
-html[data-theme="dark"] .theme-toggle {
+.skill-row {
+  border-color: rgba(16, 42, 76, 0.12) !important;
+}
+
+.skill-row span {
+  color: #31455f !important;
+}
+
+.skill-row small {
+  color: #b51218 !important;
+}
+
+/* Experience rows. */
+.experience-item {
+  border-color: rgba(16, 42, 76, 0.14) !important;
+}
+
+.experience-date {
+  color: #53657b !important;
+}
+
+.experience-role {
+  color: #17191c !important;
+}
+
+.experience-company {
+  color: #53657b !important;
+}
+
+.experience-type,
+.experience-arrow {
+  color: #b51218 !important;
+}
+
+/* Readable light experience popup. */
+.experience-popup {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.98),
+      rgba(238, 241, 244, 0.98)
+    ) !important;
+  border: 1px solid rgba(16, 42, 76, 0.16) !important;
+  box-shadow:
+    0 30px 80px rgba(16, 42, 76, 0.18),
+    0 0 45px rgba(181, 18, 24, 0.08) !important;
+  color: #17191c !important;
+}
+
+.experience-popup::before {
+  border-color: rgba(181, 18, 24, 0.12) !important;
+}
+
+.popup-header {
+  border-color: rgba(16, 42, 76, 0.14) !important;
+}
+
+.popup-header span,
+.popup-label {
+  color: #b51218 !important;
+}
+
+.popup-header strong {
+  color: #102a4c !important;
+}
+
+.popup-meta span {
+  color: #53657b !important;
+}
+
+.popup-meta b {
+  color: #24364d !important;
+}
+
+.popup-divider {
+  background: rgba(16, 42, 76, 0.14) !important;
+}
+
+.experience-popup li {
+  color: #31455f !important;
+}
+
+.experience-popup li::marker {
+  color: #b51218 !important;
+}
+
+.experience-popup::-webkit-scrollbar-thumb {
+  background: rgba(181, 18, 24, 0.28) !important;
+}
+
+/* Mobile experience popup: tap/focus-friendly reading panel. */
+@media (max-width: 760px) {
+  .experience-item {
+    cursor: pointer;
+  }
+
+  .experience-popup {
+    top: auto !important;
+    right: 12px !important;
+    left: 12px !important;
+    bottom: 12px !important;
+    width: auto !important;
+    max-width: none !important;
+    max-height: min(68vh, 520px) !important;
+    padding: 22px !important;
+    border-radius: 20px !important;
+  }
+
+  .experience-popup .popup-header {
+    gap: 12px;
+  }
+
+  .experience-popup .popup-header strong {
+    font-size: 18px;
+  }
+
+  .experience-popup .popup-meta {
+    grid-template-columns: 68px 1fr;
+  }
+
+  .experience-popup li {
+    font-size: 11px !important;
+    line-height: 1.65 !important;
+  }
+}
+
+
+
+/* =========================================================
+   FINAL READABILITY + MOBILE EXPERIENCE PANEL
+========================================================= */
+
+/* Silver is the only page-level background; no red wash. */
+html,
+body,
+.site-shell {
+  background-color: #e7e9ec !important;
+}
+
+/* Keep white surfaces visible against the silver background. */
+.section,
+.education-card,
+.project-showcase,
+.contact,
+.footer {
+  background-color: transparent;
+}
+
+.nav-pill,
+.skill-card,
+.education-card,
+.project-showcase,
+.contact-cta-panel {
+  background-color: rgba(255, 255, 255, 0.78);
+}
+
+/* Navigation: strong navy, red only on interaction. */
+.nav-links a {
+  color: #102a4c !important;
+  opacity: 1 !important;
+  text-shadow: none !important;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  color: #b51218 !important;
+}
+
+/* Section descriptions and secondary information must remain readable. */
+.section-description,
+.hero-desc,
+.experience-company,
+.experience-date,
+.skill-row span,
+.education-card p {
+  color: #31455f !important;
+  opacity: 1 !important;
+}
+
+/* =========================================================
+   EXPERIENCE — LIGHT READING PANEL
+========================================================= */
+
+.experience-popup {
+  background: #ffffff !important;
+  color: #17191c !important;
+  border: 1px solid rgba(16, 42, 76, 0.18) !important;
+  box-shadow:
+    0 28px 70px rgba(16, 42, 76, 0.16),
+    0 8px 30px rgba(181, 18, 24, 0.08) !important;
+}
+
+.popup-header strong {
+  color: #102a4c !important;
+}
+
+.popup-meta b {
+  color: #24364d !important;
+}
+
+.popup-meta span {
+  color: #53657b !important;
+}
+
+.experience-popup li {
+  color: #31455f !important;
+}
+
+/* Desktop: retain the smooth cursor-hover behavior. */
+@media (min-width: 761px) {
+  .experience-item:hover .experience-popup {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+}
+
+/* Mobile: tap an experience row to open its reading panel.
+   Hover is disabled so it never appears accidentally. */
+@media (max-width: 760px) {
+  .experience-item:hover .experience-popup {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: translateY(18px) scale(0.985) !important;
+  }
+
+  .experience-item.is-active .experience-popup {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translateY(0) scale(1) !important;
+  }
+
+  .experience-item.is-active {
+    z-index: 10000 !important;
+  }
+
+  .experience-popup {
+    position: fixed !important;
+    top: auto !important;
+    right: 12px !important;
+    bottom: 12px !important;
+    left: 12px !important;
+    width: auto !important;
+    max-width: none !important;
+    max-height: 68vh !important;
+    padding: 22px !important;
+    border-radius: 20px !important;
+  }
+
+  .experience-popup .popup-header strong {
+    font-size: 18px !important;
+  }
+
+  .experience-popup li {
+    font-size: 11px !important;
+    line-height: 1.65 !important;
+  }
+}
+
+/* =========================================================
+   NO THEME TOGGLE — LIGHT ONLY
+========================================================= */
+.theme-toggle {
   display: none !important;
 }
