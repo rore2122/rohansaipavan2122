@@ -192,6 +192,7 @@ export default function Home() {
   const [activeProject, setActiveProject] = useState(0);
   const [direction, setDirection] = useState(1);
   const [showcasePaused, setShowcasePaused] = useState(false);
+  const [activeExperience, setActiveExperience] = useState<string | null>(null);
   const reduced = useReducedMotion();
 
   const currentProject = projects[activeProject];
@@ -245,10 +246,6 @@ export default function Home() {
 
       <header className="site-header">
         <nav className="nav-pill liquid-glass">
-          <a href="#top" className="brand-mark">
-            RSP <b>/26</b>
-          </a>
-
           <div className="nav-links">
             <a href="#about">About</a>
             <a href="#experience">Experience</a>
@@ -443,7 +440,7 @@ export default function Home() {
           <div className="experience-list">
             {/* VJP & DLB */}
 
-            <article className="experience-item experience-hover">
+            <article className={`experience-item experience-hover ${activeExperience === "vjp" ? "is-active" : ""}`} onClick={() => setActiveExperience((current) => (current === "vjp" ? null : "vjp"))}>
               <div className="experience-main">
                 <div className="experience-date">AUG 2024 — MAY 2026</div>
 
@@ -464,7 +461,7 @@ export default function Home() {
 
               <div className="experience-arrow">↗</div>
 
-              <div className="experience-popup">
+              <div className="experience-popup" onClick={(event) => event.stopPropagation()}>
                 <div className="popup-header">
                   <span>WORK EXPERIENCE</span>
                   <strong>VJP &amp; DLB</strong>
@@ -516,7 +513,7 @@ export default function Home() {
 
             {/* TECHNO SPARK */}
 
-            <article className="experience-item experience-hover">
+            <article className={`experience-item experience-hover ${activeExperience === "techno" ? "is-active" : ""}`} onClick={() => setActiveExperience((current) => (current === "techno" ? null : "techno"))}>
               <div className="experience-main">
                 <div className="experience-date">JAN 2024 — MAY 2024</div>
 
@@ -535,7 +532,7 @@ export default function Home() {
 
               <div className="experience-arrow">↗</div>
 
-              <div className="experience-popup">
+              <div className="experience-popup" onClick={(event) => event.stopPropagation()}>
                 <div className="popup-header">
                   <span>INTERNSHIP</span>
                   <strong>TECHNO SPARK</strong>
