@@ -291,7 +291,7 @@ export default function Home() {
             <h1 className="hero-title" data-scramble>
               <span>I turn</span>
               <em>raw data</em>
-              <span>into decisions.</span>
+              <span>into decisions.</span> 
             </h1>
 
             <p className="hero-description">
