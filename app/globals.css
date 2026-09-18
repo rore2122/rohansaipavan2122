@@ -4499,37 +4499,114 @@ body,
 
 
 
-/* Education text — deep navy + red accent on silver/light theme. */
+/* =========================================================
+   EDUCATION — PREMIUM EDITORIAL TEXT LAYOUT
+========================================================= */
+
 .education-card > span,
 .education-card > h3,
 .education-card > p,
 .education-card > strong {
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 
-/* Year */
+/* Small academic year label */
 .education-card > span {
+  display: inline-block;
+  width: fit-content;
+  padding: 7px 11px;
+
   color: #102a4c !important;
-  text-shadow: 0 1px 6px rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(16, 42, 76, 0.14);
+
+  font-family: var(--mono);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  line-height: 1;
+
+  text-shadow: none;
+  box-shadow: 0 5px 18px rgba(16, 42, 76, 0.08);
 }
 
 /* Degree title */
 .education-card > h3 {
+  display: inline-block;
+  max-width: 92%;
+  margin-top: 32px;
+  padding: 10px 16px 12px;
+
   color: #102a4c !important;
-  text-shadow: 0 1px 8px rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.84);
+
+  font-family: var(--serif);
+  font-weight: 500;
+  line-height: 0.95;
+
+  text-shadow: none;
+  box-shadow: 0 8px 25px rgba(16, 42, 76, 0.07);
 }
 
 /* Institution */
 .education-card > p {
+  display: inline-block;
+  max-width: 88%;
+  margin-top: 8px;
+  padding: 7px 12px;
+
   color: #102a4c !important;
-  text-shadow: 0 1px 7px rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.78);
+
+  line-height: 1.4;
+
+  text-shadow: none;
+  box-shadow: 0 5px 18px rgba(16, 42, 76, 0.06);
 }
 
 /* CGPA / percentage */
 .education-card > strong {
+  display: inline-block;
+  width: fit-content;
+  margin-top: auto;
+  padding: 8px 13px;
+
   color: #b51218 !important;
-  text-shadow: 0 1px 7px rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid rgba(181, 18, 24, 0.16);
+
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1;
+
+  text-shadow: none;
+  box-shadow: 0 6px 20px rgba(181, 18, 24, 0.08);
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .education-card > span {
+    font-size: 8px;
+    padding: 6px 9px;
+  }
+
+  .education-card > h3 {
+    max-width: 100%;
+    margin-top: 22px;
+    padding: 8px 11px 10px;
+  }
+
+  .education-card > p {
+    max-width: 100%;
+    padding: 6px 9px;
+    font-size: 12px;
+  }
+
+  .education-card > strong {
+    font-size: 19px;
+    padding: 7px 10px;
+  }
 }
 
 @media (max-width: 700px) {
