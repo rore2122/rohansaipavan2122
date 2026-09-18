@@ -309,8 +309,7 @@ export default function Home() {
                 <span className="button-label">Let&apos;s Connect</span>
                 <svg className="button-border-svg" viewBox="0 0 100 36" preserveAspectRatio="none" aria-hidden="true"><rect x="1" y="1" width="98" height="34" rx="17" /></svg>
               </a>
-
-              <a href="/rohan-sai-pavan-cv.pdf" download className="button button-secondary button-cv" data-magnetic data-liquid>
+<a href="/assets/Rohan-cv.pdf" download className="button button-secondary button-cv">
                 <span className="button-label">Download CV <span>↓</span></span>
                 <svg className="button-border-svg" viewBox="0 0 100 36" preserveAspectRatio="none" aria-hidden="true"><rect x="1" y="1" width="98" height="34" rx="17" /></svg>
               </a>
