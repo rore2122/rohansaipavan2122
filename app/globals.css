@@ -4450,66 +4450,86 @@ body,
   display: none !important;
 }
 
-/* 5. Education: campus image + medium exposure + readable text. */
+/* 5. Education: silver light theme + real campus images. */
 .education-card {
   position: relative;
   isolation: isolate;
   overflow: hidden;
   min-height: 390px;
   padding: 40px !important;
-  color: #fffaf0;
+
+  color: #102a4c;
+
   background-size: cover !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
 }
 
-/* SRM image for MBA. */
+/* SRM — MBA */
 .education-card-srm {
   background-image:
     linear-gradient(
       180deg,
-      rgba(8, 9, 9, 0.18) 0%,
-      rgba(8, 9, 9, 0.26) 34%,
-      rgba(8, 9, 9, 0.70) 68%,
-      rgba(8, 9, 9, 0.94) 100%
+      rgba(255, 255, 255, 0.10) 0%,
+      rgba(255, 255, 255, 0.08) 45%,
+      rgba(255, 255, 255, 0.22) 100%
     ),
     url("/assets/srm.png") !important;
+
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
 }
 
-/* KBN image for B.Sc. */
+/* KBN — B.Sc. */
 .education-card-kbn {
   background-image:
     linear-gradient(
       180deg,
-      rgba(8, 9, 9, 0.18) 0%,
-      rgba(8, 9, 9, 0.26) 34%,
-      rgba(8, 9, 9, 0.70) 68%,
-      rgba(8, 9, 9, 0.94) 100%
+      rgba(255, 255, 255, 0.10) 0%,
+      rgba(255, 255, 255, 0.08) 45%,
+      rgba(255, 255, 255, 0.22) 100%
     ),
     url("/assets/kbn.png") !important;
+
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
 }
 
-/* Keep every education detail above the photograph and clearly readable. */
+
+
+/* Education text — deep navy + red accent on silver/light theme. */
 .education-card > span,
 .education-card > h3,
 .education-card > p,
 .education-card > strong {
   position: relative;
   z-index: 2;
-  color: #fffaf0;
-  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.82);
 }
 
+/* Year */
 .education-card > span {
-  color: #eee2c6;
+  color: #102a4c !important;
+  text-shadow: 0 1px 6px rgba(255, 255, 255, 0.85);
 }
 
+/* Degree title */
+.education-card > h3 {
+  color: #102a4c !important;
+  text-shadow: 0 1px 8px rgba(255, 255, 255, 0.9);
+}
+
+/* Institution */
 .education-card > p {
-  color: rgba(255, 250, 242, 0.86);
+  color: #102a4c !important;
+  text-shadow: 0 1px 7px rgba(255, 255, 255, 0.9);
 }
 
+/* CGPA / percentage */
 .education-card > strong {
-  color: #fff0ce;
+  color: #b51218 !important;
+  text-shadow: 0 1px 7px rgba(255, 255, 255, 0.9);
 }
 
 @media (max-width: 700px) {
