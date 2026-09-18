@@ -6986,3 +6986,271 @@ body,
 .theme-toggle {
   display: none !important;
 }
+
+
+/* =========================================================
+   FINAL FIX — LIGHT / SILVER + RED POLISH
+   No dark presentation, no red page wash.
+========================================================= */
+
+:root {
+  color-scheme: light !important;
+  --bg-primary: #e7e9ec;
+  --bg-surface: #f4f5f6;
+  --bg-surface-strong: #ffffff;
+  --bg-surface-hover: #f8f9fa;
+  --bg-surface-deep: #e1e4e8;
+  --bg-contact: #eef0f2;
+  --bg-footer: #dfe3e7;
+  --text-primary: #17191c;
+  --text-secondary: #31455f;
+  --text-muted: #53657b;
+  --text-on-accent: #ffffff;
+  --accent: #102a4c;
+  --accent-bright: #163b69;
+  --accent-copper: #b51218;
+  --accent-copper-bright: #d61a22;
+  --accent-copper-hover: #e11d25;
+  --accent-dark: #7d0d12;
+  --accent-light: #fff7f7;
+  --border: rgba(16, 42, 76, 0.14);
+  --border-strong: rgba(16, 42, 76, 0.25);
+  --glass-tint: #ffffff;
+  --glass-border: rgba(16, 42, 76, 0.13);
+  --glass-highlight: rgba(255, 255, 255, 0.82);
+  --glass-shadow-inset: rgba(16, 42, 76, 0.04);
+  --glass-shadow: rgba(16, 42, 76, 0.12);
+  --glass-opacity: 0.78;
+  --focus-ring: #b51218;
+  --print-bg: #e7e9ec;
+  --print-text: #17191c;
+}
+
+html,
+body {
+  background: #e7e9ec !important;
+  color: #17191c !important;
+}
+
+body {
+  background-image: none !important;
+}
+
+.site-shell {
+  background: #e7e9ec !important;
+}
+
+.site-shell::before,
+.site-shell::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* Navigation stays crisp on the silver surface. */
+.nav-pill {
+  background: rgba(255, 255, 255, 0.88) !important;
+  border-color: rgba(16, 42, 76, 0.14) !important;
+}
+
+.nav-links a {
+  color: #102a4c !important;
+  opacity: 1 !important;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  color: #b51218 !important;
+}
+
+/* Keep all normal text readable. */
+.section-title,
+.hero-title,
+.experience-role,
+.skill-card h3,
+.education-card h3 {
+  color: #17191c !important;
+}
+
+.hero-title em,
+.section-title em {
+  color: #102a4c !important;
+}
+
+.hero-desc,
+.section-description,
+.experience-company,
+.experience-date,
+.skill-row span,
+.education-card p,
+.contact-description {
+  color: #31455f !important;
+  opacity: 1 !important;
+}
+
+/* =========================================================
+   EDUCATION — RESTORE REAL SRM / KBN PHOTOGRAPHS
+========================================================= */
+
+.education-card {
+  isolation: isolate;
+  overflow: hidden;
+  color: #17191c !important;
+  background-color: #f4f5f6 !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  border-color: rgba(16, 42, 76, 0.16) !important;
+}
+
+.education-card-srm {
+  background-image:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.12) 0%,
+      rgba(255, 255, 255, 0.16) 45%,
+      rgba(255, 255, 255, 0.38) 100%
+    ),
+    url("/assets/srm.png") !important;
+}
+
+.education-card-kbn {
+  background-image:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.12) 0%,
+      rgba(255, 255, 255, 0.16) 45%,
+      rgba(255, 255, 255, 0.38) 100%
+    ),
+    url("/assets/kbn.png") !important;
+}
+
+.education-card > span {
+  color: #102a4c !important;
+  text-shadow: 0 1px 8px rgba(255, 255, 255, 0.9) !important;
+}
+
+.education-card > h3 {
+  color: #102a4c !important;
+  text-shadow: 0 2px 12px rgba(255, 255, 255, 0.92) !important;
+}
+
+.education-card > p {
+  color: #24364d !important;
+  text-shadow: 0 1px 8px rgba(255, 255, 255, 0.92) !important;
+}
+
+.education-card > strong {
+  color: #b51218 !important;
+  text-shadow: 0 1px 8px rgba(255, 255, 255, 0.92) !important;
+}
+
+/* Skills: readable against silver. */
+.skill-card {
+  background: rgba(255, 255, 255, 0.84) !important;
+  border-color: rgba(16, 42, 76, 0.14) !important;
+}
+
+.skill-card-number {
+  color: rgba(16, 42, 76, 0.48) !important;
+}
+
+.skill-card h3 {
+  color: #102a4c !important;
+}
+
+.skill-row span {
+  color: #31455f !important;
+}
+
+.skill-row small {
+  color: #b51218 !important;
+}
+
+/* Experience popup: light, readable panel. */
+.experience-popup {
+  background: #ffffff !important;
+  color: #17191c !important;
+  border-color: rgba(16, 42, 76, 0.18) !important;
+  box-shadow:
+    0 28px 70px rgba(16, 42, 76, 0.16),
+    0 8px 30px rgba(181, 18, 24, 0.07) !important;
+}
+
+.experience-popup .popup-header strong {
+  color: #102a4c !important;
+}
+
+.experience-popup .popup-header span,
+.experience-popup .popup-label,
+.experience-popup li::marker {
+  color: #b51218 !important;
+}
+
+.experience-popup .popup-meta span {
+  color: #53657b !important;
+}
+
+.experience-popup .popup-meta b,
+.experience-popup li {
+  color: #31455f !important;
+}
+
+/* Red is an accent, not a background replacement. */
+.button-primary,
+.nav-cta {
+  background: #b51218 !important;
+  color: #ffffff !important;
+}
+
+.button-primary:hover,
+.nav-cta:hover {
+  background: #d61a22 !important;
+}
+
+.button-secondary {
+  background: rgba(255, 255, 255, 0.86) !important;
+  color: #102a4c !important;
+  border-color: rgba(16, 42, 76, 0.18) !important;
+}
+
+.button-secondary:hover {
+  color: #b51218 !important;
+  border-color: rgba(181, 18, 24, 0.42) !important;
+}
+
+/* Theme switch is no longer part of the single light theme. */
+.theme-toggle {
+  display: none !important;
+}
+
+/* Mobile experience: tap the row; popup becomes a bottom sheet. */
+@media (max-width: 760px) {
+  .experience-item:hover .experience-popup {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: translateY(18px) scale(0.985) !important;
+  }
+
+  .experience-item.is-active .experience-popup {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translateY(0) scale(1) !important;
+  }
+
+  .experience-popup {
+    position: fixed !important;
+    top: auto !important;
+    right: 12px !important;
+    bottom: 12px !important;
+    left: 12px !important;
+    width: auto !important;
+    max-width: none !important;
+    max-height: 68vh !important;
+    overflow-y: auto !important;
+    padding: 22px !important;
+    border-radius: 20px !important;
+    z-index: 10001 !important;
+  }
+}
