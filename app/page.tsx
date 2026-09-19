@@ -13,7 +13,6 @@ import PortfolioScene from "@/components/portfolio-scene";
 import EffectsController from "@/components/effects-controller";
 import SmoothScroll from "@/components/smooth-scroll";
 import WebGLHeroBackground from "@/components/webgl-hero-background";
-import LiquidGlassControl from "@/components/liquid-glass-control";
 function Reveal({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   const ref = useRef<HTMLDivElement | null>(null);
   const inView = useInView(ref, { once: true, amount: 0.12 });
@@ -245,7 +244,6 @@ export default function Home() {
     <main className="site-shell" id="top">
       <EffectsController />
       <SmoothScroll />
-      <LiquidGlassControl />
       {/* =========================================================
           NAVIGATION
       ========================================================= */}
