@@ -4042,7 +4042,8 @@ body,
 }
 
 @supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
-  .liquid-glass {
+  .liquid-glass,
+  .project-showcase {
     backdrop-filter: blur(var(--glass-blur, 24px)) saturate(180%);
     -webkit-backdrop-filter: blur(var(--glass-blur, 24px)) saturate(180%);
   }
@@ -4050,7 +4051,8 @@ body,
   /* True lensing: bends the backdrop instead of just blurring it flat,
      which is the part that actually reads as "liquid" rather than "frosted". */
   @media (min-width: 640px) {
-    .liquid-glass {
+    .liquid-glass,
+    .project-showcase {
       backdrop-filter: blur(var(--glass-blur, 24px)) saturate(180%)
         url(#lg-lens);
       -webkit-backdrop-filter: blur(var(--glass-blur, 24px)) saturate(180%);
@@ -4060,7 +4062,8 @@ body,
 
 /* One extra crisp highlight ring along the top-left edge — this is the
    "catching the light" cue real Liquid Glass has that flat glassmorphism lacks. */
-.liquid-glass::after {
+.liquid-glass::after,
+.project-showcase::after {
   content: "";
   position: absolute;
   inset: 0;
