@@ -132,18 +132,7 @@ export default function RootLayout({
         />
       </head>
 
-      <body>
-        <svg aria-hidden="true" focusable="false" style={{ position: "absolute", width: 0, height: 0, overflow: "hidden" }}>
-          <defs>
-            <filter id="lg-lens" x="-20%" y="-20%" width="140%" height="140%" colorInterpolationFilters="sRGB">
-              <feTurbulence type="fractalNoise" baseFrequency="0.009 0.012" numOctaves="2" seed="7" result="lg-noise" />
-              <feGaussianBlur in="lg-noise" stdDeviation="3" result="lg-noise-soft" />
-              <feDisplacementMap in="SourceGraphic" in2="lg-noise-soft" scale="16" xChannelSelector="R" yChannelSelector="G" />
-            </filter>
-          </defs>
-        </svg>
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
