@@ -10,7 +10,9 @@ import {
   useSpring,
 } from "framer-motion";
 import PortfolioScene from "@/components/portfolio-scene";
-import PortfolioEffects from "../components/PortfolioEffects";
+import EffectsController from "@/components/effects-controller";
+import SmoothScroll from "@/components/smooth-scroll";
+import WebGLHeroBackground from "@/components/webgl-hero-background";
 function Reveal({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   const ref = useRef<HTMLDivElement | null>(null);
   const inView = useInView(ref, { once: true, amount: 0.12 });
@@ -61,7 +63,7 @@ function FeaturedProjectFrame({
   return (
     <motion.div
       layoutId="project-image-frame"
-      className="showcase-image-frame liquid-glass"
+      className="showcase-image-frame liquid-glass glow-border"
       initial={reduced ? false : { opacity: 0, x: direction * 55, scale: 0.96 }}
       animate={{ opacity: 1, x: 0, scale: 1 }}
       exit={reduced ? undefined : { opacity: 0, x: direction * -55, scale: 0.96 }}
@@ -81,7 +83,7 @@ function FeaturedProjectFrame({
       role="group"
       aria-label={`${project.title} featured project image`}
     >
-      <img src={project.image} alt={project.title} className="showcase-image" draggable={false} />
+      <img src={project.image} alt={project.title} className="showcase-image gloss-sweep" draggable={false} />
       <div className="showcase-image-overlay" />
       <div className="image-corner image-corner-tl" />
       <div className="image-corner image-corner-tr" />
@@ -240,7 +242,9 @@ export default function Home() {
 
   return (
     <main className="site-shell" id="top">
-<PortfolioEffects />      {/* =========================================================
+      <EffectsController />
+      <SmoothScroll />
+      {/* =========================================================
           NAVIGATION
       ========================================================= */}
 
@@ -256,7 +260,7 @@ export default function Home() {
           </div>
 
           <div className="nav-actions">
-            <a href="#contact" className="nav-cta" data-magnetic data-liquid>
+            <a href="#contact" className="nav-cta chroma-hover" data-magnetic data-liquid>
               <span className="button-label">Start a Conversation <span>↗</span></span>
               <svg className="button-border-svg" viewBox="0 0 100 36" preserveAspectRatio="none" aria-hidden="true"><rect x="1" y="1" width="98" height="34" rx="17" /></svg>
             </a>
@@ -269,6 +273,8 @@ export default function Home() {
       ========================================================= */}
 
       <section className="hero-section" id="hero">
+        <WebGLHeroBackground />
+
         <div className="hero-name-background" aria-hidden="true">
           <span>ROHAN</span>
           <span>SAI</span>
@@ -279,16 +285,20 @@ export default function Home() {
           <Reveal className="hero-reveal">
           <motion.div
             className="hero-copy"
-            initial={reduced ? false : { opacity: 0, y: 35 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: reduced ? 0 : 0.9, ease: [0.22, 1, 0.36, 1] }}
+            initial={
+              reduced
+                ? false
+                : { opacity: 0, y: 35, filter: "blur(14px)", scale: 0.985 }
+            }
+            animate={{ opacity: 1, y: 0, filter: "blur(0px)", scale: 1 }}
+            transition={{ duration: reduced ? 0 : 1.05, ease: [0.16, 1, 0.3, 1] }}
           >
             <div className="eyebrow">
               <span className="eyebrow-line" />
               Business Analysis · Data Analytics · Business Intelligence
             </div>
 
-            <h1 className="hero-title" data-scramble>
+            <h1 className="hero-title variable-weight" data-scramble>
               <span>I turn</span>
               <em>raw data</em>
               <span>into decisions.</span> 
@@ -300,7 +310,7 @@ export default function Home() {
             </p>
 
             <div className="hero-actions">
-              <a href="#work" className="button button-primary" data-magnetic data-liquid>
+              <a href="#work" className="button button-primary chroma-hover" data-magnetic data-liquid>
                 <span className="button-label">Explore My Work <span>↗</span></span>
                 <svg className="button-border-svg" viewBox="0 0 100 36" preserveAspectRatio="none" aria-hidden="true"><rect x="1" y="1" width="98" height="34" rx="17" /></svg>
               </a>
@@ -759,7 +769,7 @@ export default function Home() {
                     aria-label={`Show ${project.title}`}
                     aria-current={index === activeProject}
                   >
-                    <span className="thumb-image">
+                    <span className="thumb-image gloss-sweep mask-reveal">
                       <img src={project.image} alt="" />
                     </span>
 
@@ -837,7 +847,7 @@ export default function Home() {
           <Reveal className="skills-reveal">
           <div className="skills-wrapper">
             {skillGroups.map((group) => (
-              <div className="skill-card" key={group.number}>
+              <div className="skill-card liquid-glass glow-border" key={group.number}>
                 <div className="skill-card-number">{group.number}</div>
 
                 <h3>{group.title}</h3>
@@ -876,7 +886,7 @@ export default function Home() {
 
           <Reveal className="education-reveal">
           <div className="education-grid">
-            <article className="education-card education-card-srm">
+            <article className="education-card education-card-srm liquid-glass glow-border mask-reveal">
               <span>2024 — 2026</span>
 
               <h3>MBA — AI &amp; Data Science</h3>
@@ -886,7 +896,7 @@ export default function Home() {
               <strong>CGPA 9.04</strong>
             </article>
 
-            <article className="education-card education-card-kbn">
+            <article className="education-card education-card-kbn liquid-glass glow-border mask-reveal">
               <span>2021 — 2024</span>
 
               <h3>B.Sc. — Data Science</h3>
