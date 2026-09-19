@@ -7384,12 +7384,6 @@ html.lenis body {
   height: 100% !important;
 }
 
-.hero-grid,
-.hero-name-background {
-  position: relative;
-  z-index: 1;
-}
-
 /* Traveling gradient border glow */
 .glow-border {
   position: relative;
