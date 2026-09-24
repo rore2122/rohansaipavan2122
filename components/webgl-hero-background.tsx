@@ -9,11 +9,12 @@ const vertexShader = `
 
   void main() {
     vUv = uv;
+
     gl_Position =
       projectionMatrix *
       modelViewMatrix *
       vec4(position, 1.0);
-  } 
+  }
 `;
 
 const fragmentShader = `
@@ -50,14 +51,20 @@ const fragmentShader = `
     );
 
     vec2 i = floor(v + dot(v, C.yy));
-    vec2 x0 = v - i + dot(i, C.xx);
+
+    vec2 x0 =
+      v -
+      i +
+      dot(i, C.xx);
 
     vec2 i1 =
       (x0.x > x0.y)
         ? vec2(1.0, 0.0)
         : vec2(0.0, 1.0);
 
-    vec4 x12 = x0.xyxy + C.xxzz;
+    vec4 x12 =
+      x0.xyxy +
+      C.xxzz;
 
     x12.xy -= i1;
 
@@ -67,64 +74,117 @@ const fragmentShader = `
       permute(
         permute(
           i.y +
-          vec3(0.0, i1.y, 1.0)
+          vec3(
+            0.0,
+            i1.y,
+            1.0
+          )
         )
         +
         i.x +
-        vec3(0.0, i1.x, 1.0)
+        vec3(
+          0.0,
+          i1.x,
+          1.0
+        )
       );
 
-    vec3 m = max(
-      0.5 -
-      vec3(
-        dot(x0, x0),
-        dot(x12.xy, x12.xy),
-        dot(x12.zw, x12.zw)
-      ),
-      0.0
-    );
+    vec3 m =
+      max(
+        0.5 -
+        vec3(
+          dot(x0, x0),
+          dot(x12.xy, x12.xy),
+          dot(x12.zw, x12.zw)
+        ),
+        0.0
+      );
 
     m = m * m;
     m = m * m;
 
     vec3 x =
-      2.0 * fract(p * C.www) - 1.0;
+      2.0 *
+      fract(
+        p * C.www
+      ) -
+      1.0;
 
-    vec3 h = abs(x) - 0.5;
-    vec3 ox = floor(x + 0.5);
-    vec3 a0 = x - ox;
+    vec3 h =
+      abs(x) -
+      0.5;
+
+    vec3 ox =
+      floor(x + 0.5);
+
+    vec3 a0 =
+      x -
+      ox;
 
     m *=
       1.79284291400159 -
       0.85373472095314 *
-      (a0 * a0 + h * h);
+      (
+        a0 * a0 +
+        h * h
+      );
 
     vec3 g;
 
-    g.x = a0.x * x0.x + h.x * x0.y;
-    g.yz = a0.yz * x12.xz + h.yz * x12.yw;
+    g.x =
+      a0.x * x0.x +
+      h.x * x0.y;
 
-    return 130.0 * dot(m, g);
+    g.yz =
+      a0.yz * x12.xz +
+      h.yz * x12.yw;
+
+    return 130.0 *
+      dot(m, g);
   }
 
   void main() {
 
     vec2 uv = vUv;
 
-    float t = uTime * 0.045;
+    /*
+      Slow cinematic movement.
+      This continues on phones as well.
+    */
+    float t =
+      uTime *
+      0.045;
 
-    vec2 pos = uv * 2.4;
+    vec2 pos =
+      uv *
+      2.4;
 
     pos.x += t;
 
-    float d = distance(uv, uMouse);
+    /*
+      Mouse interaction.
+      On touch devices the mouse simply remains
+      near the center, so the animation still runs.
+    */
+    float d =
+      distance(
+        uv,
+        uMouse
+      );
 
     pos +=
       (uv - uMouse) *
-      smoothstep(0.55, 0.0, d) *
+      smoothstep(
+        0.55,
+        0.0,
+        d
+      ) *
       0.5;
 
-    float n1 = snoise(pos + t);
+    float n1 =
+      snoise(
+        pos + t
+      );
 
     float n2 =
       snoise(
@@ -141,12 +201,21 @@ const fragmentShader = `
       );
 
     float blendNavy =
-      smoothstep(0.05, 0.85, n2);
+      smoothstep(
+        0.05,
+        0.85,
+        n2
+      );
 
     float blendCrimson =
-      smoothstep(0.25, 0.95, n3);
+      smoothstep(
+        0.25,
+        0.95,
+        n3
+      );
 
-    vec3 color = uColorBase;
+    vec3 color =
+      uColorBase;
 
     color =
       mix(
@@ -163,102 +232,143 @@ const fragmentShader = `
       );
 
     gl_FragColor =
-      vec4(color, 1.0);
+      vec4(
+        color,
+        1.0
+      );
   }
 `;
 
-function ShaderPlane({
-  interactive,
-}: {
-  interactive: boolean;
-}) {
+function ShaderPlane() {
   const materialRef =
     useRef<THREE.ShaderMaterial>(null);
 
-  const { viewport } = useThree();
+  const { viewport } =
+    useThree();
 
   const mouse =
-    useRef(new THREE.Vector2(0.5, 0.5));
+    useRef(
+      new THREE.Vector2(
+        0.5,
+        0.5
+      )
+    );
 
   const targetMouse =
-    useRef(new THREE.Vector2(0.5, 0.5));
+    useRef(
+      new THREE.Vector2(
+        0.5,
+        0.5
+      )
+    );
 
   useEffect(() => {
 
-    if (!interactive) return;
-
-    const handleMove = (event: PointerEvent) => {
+    const handlePointerMove = (
+      event: PointerEvent
+    ) => {
 
       targetMouse.current.set(
-        event.clientX / window.innerWidth,
-        1 - event.clientY / window.innerHeight
+        event.clientX /
+          window.innerWidth,
+
+        1 -
+          event.clientY /
+            window.innerHeight
       );
     };
 
     window.addEventListener(
       "pointermove",
-      handleMove,
-      { passive: true }
+      handlePointerMove,
+      {
+        passive: true,
+      }
     );
 
     return () => {
       window.removeEventListener(
         "pointermove",
-        handleMove
+        handlePointerMove
       );
     };
 
-  }, [interactive]);
+  }, []);
 
-  const uniforms = useMemo(
-    () => ({
-      uTime: { value: 0 },
+  const uniforms =
+    useMemo(
+      () => ({
+        uTime: {
+          value: 0,
+        },
 
-      uMouse: {
-        value:
-          new THREE.Vector2(
-            0.5,
-            0.5
-          ),
-      },
+        uMouse: {
+          value:
+            new THREE.Vector2(
+              0.5,
+              0.5
+            ),
+        },
 
-      uColorBase: {
-        value:
-          new THREE.Color("#e7e9ec"),
-      },
+        uColorBase: {
+          value:
+            new THREE.Color(
+              "#e7e9ec"
+            ),
+        },
 
-      uColorNavy: {
-        value:
-          new THREE.Color("#102a4c"),
-      },
+        uColorNavy: {
+          value:
+            new THREE.Color(
+              "#102a4c"
+            ),
+        },
 
-      uColorCrimson: {
-        value:
-          new THREE.Color("#b51218"),
-      },
-    }),
-    []
-  );
+        uColorCrimson: {
+          value:
+            new THREE.Color(
+              "#b51218"
+            ),
+        },
+      }),
+      []
+    );
 
-  useFrame((state) => {
+  useFrame(
+    (state) => {
 
-    if (!materialRef.current) return;
+      if (
+        !materialRef.current
+      ) {
+        return;
+      }
 
-    if (interactive) {
+      /*
+        Smooth mouse movement.
+      */
       mouse.current.lerp(
         targetMouse.current,
         0.025
       );
 
-      (
-        materialRef.current.uniforms
-          .uMouse.value as THREE.Vector2
-      ).copy(mouse.current);
-    }
+      /*
+        IMPORTANT:
+        The animation clock ALWAYS
+        updates on mobile.
+      */
+      materialRef.current.uniforms.uTime.value =
+        state.clock.elapsedTime;
 
-    materialRef.current.uniforms.uTime.value =
-      state.clock.elapsedTime;
-  });
+      (
+        materialRef.current
+          .uniforms
+          .uMouse
+          .value as THREE.Vector2
+      ).copy(
+        mouse.current
+      );
+    }
+  );
 
   return (
     <mesh
@@ -268,13 +378,17 @@ function ShaderPlane({
         1,
       ]}
     >
-      <planeGeometry args={[1, 1]} />
+      <planeGeometry
+        args={[1, 1]}
+      />
 
       <shaderMaterial
         ref={materialRef}
         vertexShader={vertexShader}
         fragmentShader={fragmentShader}
         uniforms={uniforms}
+        depthWrite={false}
+        depthTest={false}
       />
     </mesh>
   );
@@ -285,9 +399,6 @@ export default function WebGLHeroBackground() {
   const [ready, setReady] =
     useState(false);
 
-  const [mobile, setMobile] =
-    useState(false);
-
   useEffect(() => {
 
     const reduced =
@@ -295,27 +406,20 @@ export default function WebGLHeroBackground() {
         "(prefers-reduced-motion: reduce)"
       ).matches;
 
-    const coarse =
-      window.matchMedia(
-        "(pointer: coarse)"
-      ).matches;
-
-    const smallScreen =
-      window.innerWidth <= 768;
-
-    if (
-      reduced ||
-      (coarse && smallScreen)
-    ) {
-      setReady(false);
+    if (reduced) {
       return;
     }
 
+    /*
+      DO NOT disable WebGL on phones.
+    */
     setReady(true);
 
   }, []);
 
-  if (!ready) return null;
+  if (!ready) {
+    return null;
+  }
 
   return (
     <div
@@ -323,19 +427,23 @@ export default function WebGLHeroBackground() {
       aria-hidden="true"
     >
       <Canvas
+        frameloop="always"
+        dpr={[1, 1.25]}
         gl={{
           antialias: false,
           alpha: false,
-          powerPreference: "high-performance",
+          powerPreference:
+            "high-performance",
         }}
-        dpr={[1, 1.25]}
         camera={{
-          position: [0, 0, 1],
+          position: [
+            0,
+            0,
+            1,
+          ],
         }}
       >
-        <ShaderPlane
-          interactive={!mobile}
-        />
+        <ShaderPlane />
       </Canvas>
     </div>
   );
