@@ -8182,3 +8182,353 @@ html.lenis body {
     display: block !important;
   }
 }
+
+
+/* =========================================================
+   MOBILE RESPONSIVE LAYER (final — overrides everything above)
+   Tablet ≤1024px · Phone ≤760px · Small phone ≤390px
+========================================================= */
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+.site-shell {
+  overflow-x: clip;
+}
+
+img, svg, video, canvas {
+  max-width: 100%;
+}
+
+/* ---------- Tablet & below: stack the two-column layouts ---------- */
+@media (max-width: 1024px) {
+  .container {
+    width: min(1320px, calc(100% - 48px)) !important;
+  }
+
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    min-height: auto !important;
+    gap: 20px !important;
+  }
+
+  .hero-copy {
+    max-width: 100% !important;
+  }
+
+  .hero-visual-wrapper {
+    height: min(620px, 80vw) !important;
+  }
+
+  .about-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 24px !important;
+  }
+
+  .skills-wrapper,
+  .education-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .showcase-main {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 28px !important;
+  }
+
+  .experience-heading,
+  .projects-heading {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 20px !important;
+  }
+}
+
+/* ---------- Phones ---------- */
+@media (max-width: 760px) {
+  .container {
+    width: calc(100% - 32px) !important;
+  }
+
+  /* Header: respect notches / safe areas */
+  .site-header {
+    top: calc(10px + env(safe-area-inset-top, 0px)) !important;
+    padding: 0 12px !important;
+  }
+
+  .nav-pill {
+    min-height: 54px !important;
+    padding: 6px 8px 6px 16px !important;
+    gap: 10px !important;
+  }
+
+  .nav-identity {
+    left: 18px !important;
+    font-size: 9px !important;
+  }
+
+  .mobile-menu-toggle {
+    width: 44px !important;
+    height: 44px !important;
+  }
+
+  .mobile-navigation {
+    top: calc(72px + env(safe-area-inset-top, 0px)) !important;
+    max-height: calc(100svh - 96px);
+    overflow-y: auto;
+  }
+
+  .mobile-navigation a {
+    min-height: 52px !important;
+    font-size: 12px !important;
+  }
+
+  /* Section rhythm */
+  .section {
+    padding: 84px 0 !important;
+  }
+
+  .projects-section {
+    padding-top: 84px !important;
+    padding-bottom: 84px !important;
+  }
+
+  .contact {
+    min-height: auto !important;
+    padding: 90px 0 !important;
+  }
+
+  .section-title {
+    font-size: clamp(40px, 12vw, 64px) !important;
+    line-height: 0.95 !important;
+    letter-spacing: -0.045em !important;
+  }
+
+  .contact-title {
+    font-size: clamp(44px, 13.5vw, 76px) !important;
+    line-height: 0.92 !important;
+    letter-spacing: -0.05em !important;
+    margin-top: 24px !important;
+  }
+
+  .section-description,
+  .projects-description,
+  .contact-description {
+    font-size: 15px !important;
+    line-height: 1.7 !important;
+    max-width: 100% !important;
+  }
+
+  .eyebrow,
+  .section-eyebrow {
+    font-size: 10px !important;
+    letter-spacing: 0.16em !important;
+  }
+
+  /* Hero */
+  .hero-section {
+    padding: 0 !important;
+    min-height: auto !important;
+  }
+
+  .hero-grid {
+    padding: 100px 16px 40px !important;
+    gap: 8px !important;
+    align-items: start !important;
+  }
+
+  .hero-title {
+    font-size: clamp(44px, 13.5vw, 68px) !important;
+    line-height: 0.95 !important;
+    letter-spacing: -0.03em !important;
+  }
+
+  .hero-description {
+    font-size: 15px !important;
+    line-height: 1.65 !important;
+    max-width: 100% !important;
+    margin-top: 18px !important;
+  }
+
+  .hero-actions {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+    margin-top: 24px !important;
+  }
+
+  .hero-actions .button,
+  .contact-actions .button {
+    width: 100% !important;
+    min-width: 0 !important;
+    height: 52px !important;
+    justify-content: center !important;
+  }
+
+  .contact-actions {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+  }
+
+  /* Buttons: readable text, comfortable tap size */
+  .button {
+    min-width: 0 !important;
+    height: 52px !important;
+    padding: 0 22px !important;
+    font-size: 11px !important;
+    letter-spacing: 0.1em !important;
+  }
+
+  .hero-stats {
+    width: 100% !important;
+    margin-top: 28px !important;
+    padding-top: 18px !important;
+    gap: 8px !important;
+  }
+
+  .hero-name-background {
+    left: 0 !important;
+    right: 0 !important;
+  }
+
+  .hero-name-background span {
+    font-size: clamp(64px, 21vw, 120px) !important;
+  }
+
+  .hero-visual-wrapper {
+    height: min(118vw, 520px) !important;
+    margin-top: 4px !important;
+  }
+
+  .portrait-wrapper {
+    left: 0 !important;
+    right: 0 !important;
+    margin: 0 auto !important;
+    width: min(92%, 420px) !important;
+    height: 100% !important;
+  }
+
+  .scene-intelligence {
+    top: 2% !important;
+    right: 4% !important;
+    font-size: 8px !important;
+  }
+
+  .scene-words {
+    right: 4px !important;
+    bottom: 6% !important;
+    font-size: 8px !important;
+    gap: 8px !important;
+  }
+
+  .scroll-indicator {
+    display: none !important;
+  }
+
+  /* About / skills / education */
+  .about-grid {
+    margin-top: 36px !important;
+  }
+
+  .skills-wrapper,
+  .education-grid,
+  .experience-grid {
+    margin-top: 40px !important;
+  }
+
+  /* Projects showcase */
+  .project-showcase {
+    padding: 16px !important;
+    min-height: auto !important;
+    margin-top: 40px !important;
+  }
+
+  .showcase-topbar {
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+    padding-bottom: 16px !important;
+  }
+
+  .showcase-main {
+    min-height: auto !important;
+    padding: 24px 0 !important;
+    gap: 22px !important;
+  }
+
+  .showcase-image-stage {
+    min-height: 240px !important;
+  }
+
+  .showcase-controls {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 16px !important;
+    padding: 18px 0 0 !important;
+  }
+
+  .project-thumbnails {
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    gap: 6px !important;
+  }
+
+  .thumb-info {
+    display: none !important;
+  }
+
+  /* Experience cards */
+  .experience-card {
+    border-radius: 14px;
+  }
+
+  /* Footer */
+  .footer-inner {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 12px !important;
+    font-size: 9px !important;
+  }
+}
+
+/* ---------- Small phones ---------- */
+@media (max-width: 390px) {
+  .container {
+    width: calc(100% - 24px) !important;
+  }
+
+  .hero-grid {
+    padding: 96px 12px 32px !important;
+  }
+
+  .hero-title {
+    font-size: clamp(38px, 13vw, 56px) !important;
+  }
+
+  .hero-description,
+  .section-description,
+  .projects-description,
+  .contact-description {
+    font-size: 14px !important;
+  }
+
+  .button {
+    font-size: 10px !important;
+    padding: 0 16px !important;
+  }
+
+  .project-showcase {
+    padding: 12px !important;
+  }
+}
+
+/* Landscape phones: don't force full-screen hero */
+@media (max-width: 900px) and (orientation: landscape) and (max-height: 520px) {
+  .hero-grid {
+    padding-top: 84px !important;
+  }
+
+  .hero-visual-wrapper {
+    height: 360px !important;
+  }
+}
