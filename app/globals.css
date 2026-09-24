@@ -8426,3 +8426,29 @@ button {
   }
 
 }
+/* =========================================================
+   MOBILE WEBGL HERO
+========================================================= */
+
+.webgl-hero-background {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+  opacity: 0.6 !important;
+}
+
+.webgl-hero-background canvas {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+@media (pointer: coarse) {
+  .webgl-hero-background {
+    opacity: 0.48 !important;
+  }
+}
