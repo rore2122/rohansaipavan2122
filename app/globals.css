@@ -8532,3 +8532,76 @@ img, svg, video, canvas {
     height: 360px !important;
   }
 }
+
+
+/* =========================================================
+   MOBILE FIXES ROUND 2
+========================================================= */
+
+/* 1. Header text was cream-on-white (invisible). Use navy. */
+.nav-identity {
+  color: #102a4c !important;
+  opacity: 0.85;
+}
+
+.nav-identity-line {
+  color: #b51218 !important;
+}
+
+/* 2. Square glass layer showing outside the rounded pill. */
+.nav-pill::before,
+.nav-pill::after {
+  border-radius: inherit !important;
+}
+
+.nav-pill {
+  isolation: isolate;
+  -webkit-mask-image: -webkit-radial-gradient(white, black); /* Safari clip fix */
+}
+
+.mobile-navigation {
+  -webkit-mask-image: none;
+}
+
+/* 3. Remove the stretched SVG outline ring on touch / phones. */
+@media (hover: none), (max-width: 760px) {
+  .button-border-svg {
+    display: none !important;
+  }
+
+  .button:hover,
+  .button:active {
+    transform: none !important;
+  }
+}
+
+/* Phone polish */
+@media (max-width: 760px) {
+  .nav-pill {
+    border-radius: 999px !important;
+  }
+
+  .nav-identity {
+    font-size: 10px !important;
+    letter-spacing: 0.12em !important;
+  }
+
+  /* Eyebrow: shorter line + tighter text so it wraps cleanly */
+  .eyebrow {
+    gap: 10px !important;
+    font-size: 9px !important;
+    letter-spacing: 0.12em !important;
+    line-height: 1.6 !important;
+  }
+
+  .eyebrow-line {
+    width: 22px !important;
+    flex: 0 0 22px !important;
+  }
+
+  .button-secondary,
+  .button-cv {
+    border: 1px solid rgba(16, 42, 76, 0.28) !important;
+    background: rgba(255, 255, 255, 0.7) !important;
+  }
+}
