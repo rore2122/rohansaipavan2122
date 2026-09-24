@@ -227,8 +227,7 @@ img {
 .nav-pill {
   min-height: 70px;
   width: 100%;
-  display: grid;
-  grid-template-columns: 180px 1fr 245px;
+  display: flex;
   align-items: center;
   padding: 0 20px 0 28px;
 
@@ -266,6 +265,8 @@ img {
   align-items: center;
   justify-content: center;
   gap: 31px;
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
 .nav-links a {
@@ -5643,35 +5644,7 @@ body,
     inset: 5px;
   }
 
-}/* =========================================================
-   HEADER — BRAND REMOVED / FULL WIDTH NAV
-========================================================= */
-
-@media (min-width: 851px) {
-  .nav-pill {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-  }
-
-  .nav-links {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    white-space: nowrap;
-  }
-
-  .nav-actions {
-    margin-left: auto;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-  }
-}/* =========================================================
+/* =========================================================
    HEADER — LEFT IDENTITY
 ========================================================= */
 
@@ -7661,365 +7634,443 @@ html.lenis body {
     width: 190px;
   }
 }
+
+
 /* =========================================================
-   Rohan Sai Pavan Portfolio
-   FINAL RESPONSIVE + MOBILE INTERACTION SYSTEM
-   ========================================================= */
-
-/* ---------------------------------------------------------
-   GLOBAL SAFETY
---------------------------------------------------------- */
-
-html {
-  scroll-behavior: smooth;
-  -webkit-text-size-adjust: 100%;
-  overflow-x: hidden;
+   MOBILE CINEMATIC HERO FALLBACK
+   Keeps the desktop WebGL shader untouched and provides a
+   reliable GPU-composited animation for iPhone/iPad.
+========================================================= */
+.mobile-cinematic-background {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+  opacity: 1 !important;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(255,255,255,.97) 0%, rgba(238,240,243,.95) 42%, rgba(215,220,225,.93) 100%) !important;
 }
 
-body {
-  overflow-x: hidden;
-  min-width: 320px;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-img,
-svg,
-video,
-canvas {
-  max-width: 100%;
-}
-
-button,
-a,
-input,
-textarea,
-select {
-  -webkit-tap-highlight-color: transparent;
-}
-
-a,
-button {
-  touch-action: manipulation;
-}
-
-
-/* ---------------------------------------------------------
-   HEADER
---------------------------------------------------------- */
-
-.site-header {
-  position: fixed;
-  top: 18px;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-
-  display: flex;
-  justify-content: center;
-
-  padding: 0 24px;
-
+.mobile-cinematic-orb {
+  position: absolute;
+  border-radius: 50%;
+  width: 78vw;
+  height: 78vw;
+  max-width: 560px;
+  max-height: 560px;
+  will-change: transform, opacity;
+  transform: translate3d(0,0,0);
   pointer-events: none;
 }
 
+.mobile-cinematic-orb.orb-one {
+  top: -24%;
+  left: -28%;
+  background: radial-gradient(circle, rgba(16,42,76,.24) 0%, rgba(16,42,76,.10) 42%, transparent 73%);
+  filter: blur(48px);
+  animation: mobileLiquidOne 10s ease-in-out infinite alternate;
+}
+
+.mobile-cinematic-orb.orb-two {
+  right: -32%;
+  bottom: -18%;
+  width: 84vw;
+  height: 84vw;
+  background: radial-gradient(circle, rgba(181,18,24,.19) 0%, rgba(181,18,24,.075) 42%, transparent 74%);
+  filter: blur(52px);
+  animation: mobileLiquidTwo 12s ease-in-out infinite alternate;
+}
+
+.mobile-cinematic-orb.orb-three {
+  left: 38%;
+  top: 30%;
+  width: 58vw;
+  height: 58vw;
+  background: radial-gradient(circle, rgba(16,42,76,.14) 0%, rgba(16,42,76,.045) 44%, transparent 75%);
+  filter: blur(58px);
+  animation: mobileLiquidThree 8s ease-in-out infinite alternate;
+}
+
+.mobile-cinematic-noise {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .045;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+}
+
+@keyframes mobileLiquidOne {
+  0% { transform: translate3d(-4vw,-2vh,0) scale(.92); }
+  50% { transform: translate3d(18vw,10vh,0) scale(1.12); }
+  100% { transform: translate3d(6vw,22vh,0) scale(1.02); }
+}
+
+@keyframes mobileLiquidTwo {
+  0% { transform: translate3d(8vw,8vh,0) scale(.92); }
+  50% { transform: translate3d(-18vw,-10vh,0) scale(1.14); }
+  100% { transform: translate3d(-5vw,-20vh,0) scale(1.03); }
+}
+
+@keyframes mobileLiquidThree {
+  0% { transform: translate3d(-18vw,4vh,0) scale(.82); opacity:.55; }
+  50% { transform: translate3d(12vw,-8vh,0) scale(1.15); opacity:1; }
+  100% { transform: translate3d(-4vw,12vh,0) scale(.96); opacity:.7; }
+}
+
+.mobile-cinematic-background.is-reduced .mobile-cinematic-orb {
+  animation: none !important;
+}
+
+@media (max-width: 700px) {
+  .mobile-cinematic-orb.orb-one { filter: blur(44px); }
+  .mobile-cinematic-orb.orb-two { filter: blur(48px); }
+  .mobile-cinematic-orb.orb-three { filter: blur(52px); }
+}
+
+/* =========================================================
+   CLEAN FINAL RESPONSIVE SYSTEM
+   Single source of truth for navigation + mobile behavior.
+   ========================================================= */
+
+.site-header {
+  position: fixed !important;
+  top: 18px !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  z-index: 1000 !important;
+  display: flex !important;
+  justify-content: center !important;
+  padding: 0 24px !important;
+  transform: none !important;
+  pointer-events: none !important;
+}
+
 .nav-pill {
-  width: min(1180px, 100%);
+  width: min(1180px, 100%) !important;
+  min-height: 62px !important;
 
-  pointer-events: auto;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  gap: 24px !important;
+  padding: 8px 10px 8px 24px !important;
 
-  gap: 24px;
-
-  min-height: 62px;
-  padding: 8px 10px 8px 24px;
-
-  border-radius: 999px;
-
-  box-shadow:
-    0 12px 35px rgba(16, 42, 76, 0.08);
-
-  transition:
-    transform 300ms ease,
-    box-shadow 300ms ease;
+  overflow: visible !important;
 }
 
 .nav-links {
-  display: flex;
-  align-items: center;
-  gap: clamp(18px, 2.4vw, 36px);
+  position: static !important;
+  left: auto !important;
+  transform: none !important;
 
-  min-width: 0;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+
+  gap: clamp(16px, 2.2vw, 34px) !important;
+
+  white-space: nowrap !important;
+  overflow: visible !important;
 }
 
 .nav-links a {
-  white-space: nowrap;
-  font-size: 11px;
-  letter-spacing: 0.08em;
+  flex: 0 0 auto !important;
+  white-space: nowrap !important;
+  font-size: 10px !important;
+  letter-spacing: 0.10em !important;
+  color: #102a4c !important;
+  opacity: 1 !important;
 }
 
 .nav-actions {
+  flex: 0 0 auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  margin-left: 0 !important;
+  gap: 8px !important;
+}
+
+.nav-cta {
+  min-width: 238px !important;
+  height: 46px !important;
+  flex: 0 0 auto !important;
+  white-space: nowrap !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Mobile navigation */
+.mobile-menu-toggle {
+  display: none;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: 1px solid rgba(16,42,76,.16);
+  border-radius: 13px;
+  background: rgba(255,255,255,.72);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
   flex-shrink: 0;
 }
 
-
-/* ---------------------------------------------------------
-   HERO
---------------------------------------------------------- */
-
-.hero-section {
-  min-height: 100svh;
-  width: 100%;
-
-  overflow: hidden;
-
-  position: relative;
+.mobile-menu-toggle span {
+  width: 18px;
+  height: 1.5px;
+  background: #102a4c;
+  border-radius: 999px;
+  transition: transform 240ms ease, opacity 180ms ease;
 }
 
-.hero-grid {
-  position: relative;
-  z-index: 5;
-
-  width: min(1280px, 100%);
-
-  margin: 0 auto;
-
-  padding:
-    150px
-    clamp(24px, 5vw, 80px)
-    90px;
+.mobile-menu-toggle.is-open span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
 }
 
-.hero-copy {
-  width: min(760px, 100%);
+.mobile-menu-toggle.is-open span:nth-child(2) {
+  opacity: 0;
 }
 
-.hero-title {
-  max-width: 100%;
-  overflow-wrap: normal;
-  word-break: normal;
+.mobile-menu-toggle.is-open span:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
 }
 
-.hero-description {
-  max-width: 650px;
+.mobile-navigation {
+  position: fixed;
+  top: 76px;
+  left: 12px;
+  right: 12px;
+  z-index: 9999;
+
+  display: none;
+  flex-direction: column;
+  padding: 10px;
+
+  border-radius: 20px;
+  background: rgba(255,255,255,.94);
+  border: 1px solid rgba(16,42,76,.13);
+
+  box-shadow: 0 25px 60px rgba(16,42,76,.14);
+
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
 }
 
-.hero-actions {
+.mobile-navigation a {
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
+  align-items: center;
+  min-height: 50px;
+  padding: 0 16px;
+  border-radius: 12px;
+
+  color: #102a4c;
+  text-decoration: none;
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+  letter-spacing: .08em;
+
+  transition: background 180ms ease, color 180ms ease, transform 180ms ease;
 }
 
-.hero-stats {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 28px;
+.mobile-navigation a:hover,
+.mobile-navigation a:active {
+  color: #b51218;
+  background: rgba(181,18,24,.06);
+  transform: translateX(3px);
 }
 
+/* Mobile cinematic fallback.
+   Works with either .mobile-cinematic-background or
+   .mobile-hero-animation from the current page.tsx. */
 
-/* ---------------------------------------------------------
-   TABLET
---------------------------------------------------------- */
+.mobile-cinematic-background,
+.mobile-hero-animation {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+  opacity: 1 !important;
 
-@media (max-width: 1024px) {
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      #f8f9fa 0%,
+      #e9ebee 42%,
+      #d7dbe0 100%
+    );
+}
 
+.mobile-cinematic-orb,
+.mobile-liquid {
+  position: absolute;
+  border-radius: 50%;
+  width: 78vw;
+  height: 78vw;
+  max-width: 560px;
+  max-height: 560px;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+.mobile-cinematic-orb.orb-one,
+.mobile-liquid-one {
+  top: -24%;
+  left: -28%;
+  background: radial-gradient(circle, rgba(16,42,76,.24) 0%, rgba(16,42,76,.10) 42%, transparent 73%);
+  filter: blur(48px);
+  animation: mobileLiquidOne 10s ease-in-out infinite alternate;
+}
+
+.mobile-cinematic-orb.orb-two,
+.mobile-liquid-two {
+  right: -32%;
+  bottom: -18%;
+  width: 84vw;
+  height: 84vw;
+  background: radial-gradient(circle, rgba(181,18,24,.19) 0%, rgba(181,18,24,.075) 42%, transparent 74%);
+  filter: blur(52px);
+  animation: mobileLiquidTwo 12s ease-in-out infinite alternate;
+}
+
+.mobile-cinematic-orb.orb-three,
+.mobile-liquid-three {
+  left: 38%;
+  top: 30%;
+  width: 58vw;
+  height: 58vw;
+  background: radial-gradient(circle, rgba(16,42,76,.14) 0%, rgba(16,42,76,.045) 44%, transparent 75%);
+  filter: blur(58px);
+  animation: mobileLiquidThree 8s ease-in-out infinite alternate;
+}
+
+.mobile-liquid-four {
+  right: -20%;
+  bottom: -20%;
+  width: 100vw;
+  height: 100vw;
+  background: radial-gradient(circle, rgba(181,18,24,.12), transparent 70%);
+  filter: blur(55px);
+  animation: mobileLiquidFour 14s ease-in-out infinite alternate;
+}
+
+.mobile-cinematic-noise,
+.mobile-noise {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .045;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+}
+
+@keyframes mobileLiquidOne {
+  0% { transform: translate3d(-6vw,-3vh,0) scale(.92); }
+  50% { transform: translate3d(18vw,10vh,0) scale(1.12); }
+  100% { transform: translate3d(5vw,22vh,0) scale(1.03); }
+}
+
+@keyframes mobileLiquidTwo {
+  0% { transform: translate3d(8vw,8vh,0) scale(.92); }
+  50% { transform: translate3d(-18vw,-10vh,0) scale(1.14); }
+  100% { transform: translate3d(-5vw,-20vh,0) scale(1.03); }
+}
+
+@keyframes mobileLiquidThree {
+  0% { transform: translate3d(-18vw,4vh,0) scale(.82); opacity:.55; }
+  50% { transform: translate3d(12vw,-8vh,0) scale(1.15); opacity:1; }
+  100% { transform: translate3d(-4vw,12vh,0) scale(.96); opacity:.7; }
+}
+
+@keyframes mobileLiquidFour {
+  0% { transform: translate3d(10vw,10vh,0) scale(.90); }
+  50% { transform: translate3d(-15vw,-15vh,0) scale(1.18); }
+  100% { transform: translate3d(-5vw,-5vh,0) scale(1); }
+}
+
+@media (max-width: 1100px) {
   .site-header {
-    top: 12px;
-    padding: 0 16px;
+    padding: 0 16px !important;
   }
 
   .nav-pill {
-    min-height: 58px;
-    padding-left: 18px;
-    padding-right: 8px;
+    min-height: 58px !important;
+    padding-left: 18px !important;
   }
 
   .nav-links {
-    gap: 18px;
+    gap: 17px !important;
   }
 
   .nav-links a {
-    font-size: 10px;
+    font-size: 9px !important;
   }
 
-  .hero-grid {
-    padding:
-      130px
-      32px
-      70px;
+  .nav-cta {
+    min-width: 205px !important;
+    height: 44px !important;
+    padding: 0 18px !important;
   }
-
 }
 
-
-/* ---------------------------------------------------------
-   TABLET / LARGE PHONE
---------------------------------------------------------- */
-
 @media (max-width: 760px) {
-
   .site-header {
-    top: 10px;
-    padding: 0 12px;
+    top: 10px !important;
+    padding: 0 10px !important;
   }
 
   .nav-pill {
-    width: 100%;
-    min-height: 56px;
-
-    padding: 8px 10px 8px 18px;
-
-    border-radius: 20px;
+    width: 100% !important;
+    min-height: 56px !important;
+    padding: 7px 8px 7px 16px !important;
+    border-radius: 18px !important;
   }
 
-  .nav-links {
-    display: none;
+  .nav-links,
+  .nav-cta {
+    display: none !important;
   }
 
   .nav-actions {
-    margin-left: auto;
+    margin-left: auto !important;
   }
 
-  .nav-cta {
-    min-height: 40px;
-    padding: 9px 15px;
+  .mobile-menu-toggle {
+    display: flex !important;
   }
 
-  .hero-section {
-    min-height: auto;
-  }
-
-  .hero-grid {
-    min-height: 100svh;
-
+  .mobile-navigation {
     display: flex;
-    align-items: center;
-
-    padding:
-      125px
-      20px
-      65px;
   }
 
-  .hero-copy {
-    width: 100%;
+  .mobile-cinematic-background,
+  .mobile-hero-animation {
+    display: block !important;
   }
 
-  .hero-title {
-    font-size: clamp(
-      54px,
-      11vw,
-      92px
-    );
-
-    line-height: 0.95;
-  }
-
-  .hero-description {
-    width: 100%;
-    max-width: 560px;
-  }
-
-  .hero-actions {
-    width: 100%;
-  }
-
-  .hero-actions .button {
-    min-height: 48px;
-  }
-
-  .hero-stats {
-    display: grid;
-
-    grid-template-columns:
-      repeat(3, minmax(0, 1fr));
-
-    width: 100%;
-
-    gap: 12px;
-  }
-
-  .stat {
-    min-width: 0;
-  }
-
-  .stat strong {
-    font-size: clamp(24px, 5vw, 34px);
-  }
-
-}
-
-
-/* ---------------------------------------------------------
-   MOBILE
---------------------------------------------------------- */
-
-@media (max-width: 600px) {
-
-  html {
-    scroll-padding-top: 90px;
-  }
-
-  body {
-    width: 100%;
-  }
-
-  .site-header {
-    top: 8px;
-    padding: 0 10px;
-  }
-
-  .nav-pill {
-    min-height: 54px;
-
-    padding:
-      7px
-      8px
-      7px
-      16px;
-
-    border-radius: 18px;
-  }
-
-  .nav-cta {
-    font-size: 9px;
-    letter-spacing: 0.06em;
-
-    padding:
-      9px
-      12px;
-
-    min-height: 40px;
+  /* WebGL stays desktop-only; mobile uses the reliable CSS GPU layer. */
+  .hero-section > .webgl-hero-background {
+    display: none !important;
   }
 
   .hero-grid {
     min-height: 100svh;
-
-    padding:
-      112px
-      16px
-      55px;
-
+    padding: 112px 16px 55px;
     align-items: center;
   }
 
   .hero-title {
-    font-size: clamp(
-      45px,
-      14.5vw,
-      74px
-    );
-
-    line-height: 0.93;
-
-    letter-spacing: -0.025em;
+    font-size: clamp(45px, 14.5vw, 74px);
+    line-height: .93;
+    letter-spacing: -.025em;
   }
 
   .hero-description {
@@ -8034,98 +8085,48 @@ button {
 
   .hero-actions .button {
     width: 100%;
-
     min-height: 50px;
-
     justify-content: center;
   }
 
   .hero-stats {
-    grid-template-columns:
-      repeat(3, minmax(0, 1fr));
-
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 8px;
-
     margin-top: 8px;
   }
 
-  .stat {
-    padding: 8px 4px;
-  }
-
-  .stat strong {
-    font-size: 23px;
-  }
-
-  .stat span {
-    display: block;
-
-    font-size: 8px;
-
-    line-height: 1.35;
-
-    letter-spacing: 0.05em;
-  }
-
-  /* Disable expensive hero WebGL on phones */
-  .webgl-hero-background {
-    display: none !important;
-  }
-
-  /* Disable desktop cursor */
   .custom-cursor,
   .cursor,
   [data-cursor] {
     display: none !important;
   }
 
-  /* Disable 3D hover behavior on touch */
-  .glow-border:hover::after {
-    opacity: 0.35;
+  .mobile-cinematic-orb,
+  .mobile-liquid {
+    filter: blur(44px);
   }
 
-  .gloss-sweep:hover::after {
-    background-position: 120% 120%;
+  .mobile-cinematic-orb.orb-three,
+  .mobile-liquid-three {
+    filter: blur(52px);
   }
-
 }
 
-
-/* ---------------------------------------------------------
-   SMALL PHONES
---------------------------------------------------------- */
-
 @media (max-width: 390px) {
-
   .site-header {
-    padding: 0 8px;
+    padding: 0 8px !important;
   }
 
   .nav-pill {
-    padding-left: 13px;
-  }
-
-  .nav-cta {
-    font-size: 8px;
-
-    padding:
-      8px
-      10px;
+    padding-left: 13px !important;
   }
 
   .hero-grid {
-    padding:
-      105px
-      13px
-      45px;
+    padding: 105px 13px 45px;
   }
 
   .hero-title {
-    font-size: clamp(
-      40px,
-      14.5vw,
-      60px
-    );
+    font-size: clamp(40px, 14.5vw, 60px);
   }
 
   .hero-description {
@@ -8143,924 +8144,40 @@ button {
   .stat span {
     font-size: 7px;
   }
-
 }
 
-
-/* ---------------------------------------------------------
-   LANDSCAPE PHONES
---------------------------------------------------------- */
-
-@media (
-  max-width: 900px
-) and (
-  orientation: landscape
-) {
-
-  .hero-grid {
-    min-height: 720px;
-
-    padding-top: 100px;
+@media (prefers-reduced-motion: reduce) {
+  .mobile-cinematic-orb,
+  .mobile-liquid {
+    animation: none !important;
   }
 
-  .hero-title {
-    font-size: clamp(
-      48px,
-      8vw,
-      78px
-    );
+  .mobile-hero-animation,
+  .mobile-cinematic-background {
+    display: block !important;
   }
-
 }
 
-
-/* ---------------------------------------------------------
-   TOUCH DEVICES
---------------------------------------------------------- */
-
-@media (hover: none) and (pointer: coarse) {
+@media (pointer: coarse) {
+  .custom-cursor {
+    display: none !important;
+  }
 
   [data-magnetic] {
     transform: none !important;
   }
-
-  .chroma-hover:hover {
-    box-shadow: none;
-  }
-
-  .variable-weight:hover {
-    font-variation-settings: "wght" 600;
-  }
-
-}
-
-
-/* ---------------------------------------------------------
-   REDUCED MOTION
---------------------------------------------------------- */
-
-@media (prefers-reduced-motion: reduce) {
-
-  html {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-
-  .webgl-hero-background {
-    display: none !important;
-  }
-
-}
-
-
-/* ---------------------------------------------------------
-   PERFORMANCE
---------------------------------------------------------- */
-
-@media (max-width: 760px) {
-
-  .liquid-glass {
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-  }
-
-  .glow-border::after {
-    animation-duration: 10s;
-  }
-
-}
-
-
-/* ---------------------------------------------------------
-   SAFE AREA — iPHONE
---------------------------------------------------------- */
-
-@supports (
-  padding: env(safe-area-inset-top)
-) {
-
-  .site-header {
-    padding-top:
-      max(
-        0px,
-        env(safe-area-inset-top)
-      );
-  }
-
-}
-
-
-/* ---------------------------------------------------------
-   BETTER MOBILE TAP TARGETS
---------------------------------------------------------- */
-
-@media (max-width: 760px) {
-
-  a,
-  button {
-    min-height: 44px;
-  }
-
-  .nav-links a {
-    min-height: 44px;
-  }
-
-}
-/* =========================================================
-   MOBILE NAVIGATION
-========================================================= */
-
-.mobile-menu-toggle {
-  display: none;
-
-  width: 42px;
-  height: 42px;
-
-  padding: 0;
-
-  border: 1px solid
-    rgba(16, 42, 76, 0.16);
-
-  border-radius: 13px;
-
-  background:
-    rgba(255, 255, 255, 0.72);
-
-  align-items: center;
-  justify-content: center;
-
-  flex-direction: column;
-
-  gap: 5px;
-
-  cursor: pointer;
-
-  flex-shrink: 0;
-}
-
-.mobile-menu-toggle span {
-  width: 18px;
-  height: 1.5px;
-
-  background: #102a4c;
-
-  border-radius: 999px;
-
-  transition:
-    transform 240ms ease,
-    opacity 180ms ease;
-}
-
-.mobile-menu-toggle.is-open span:nth-child(1) {
-  transform:
-    translateY(6.5px)
-    rotate(45deg);
-}
-
-.mobile-menu-toggle.is-open span:nth-child(2) {
-  opacity: 0;
-}
-
-.mobile-menu-toggle.is-open span:nth-child(3) {
-  transform:
-    translateY(-6.5px)
-    rotate(-45deg);
-}
-
-.mobile-navigation {
-  position: fixed;
-
-  top: 76px;
-  left: 12px;
-  right: 12px;
-
-  z-index: 999;
-
-  display: flex;
-  flex-direction: column;
-
-  padding: 10px;
-
-  border-radius: 20px;
-
-  background:
-    rgba(255, 255, 255, 0.94);
-
-  border:
-    1px solid
-    rgba(16, 42, 76, 0.13);
-
-  box-shadow:
-    0 25px 60px
-    rgba(16, 42, 76, 0.14);
-
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-}
-
-.mobile-navigation a {
-  display: flex;
-  align-items: center;
-
-  min-height: 50px;
-
-  padding:
-    0
-    16px;
-
-  border-radius: 12px;
-
-  color: #102a4c;
-
-  text-decoration: none;
-
-  font-family: "DM Mono", monospace;
-
-  font-size: 11px;
-
-  letter-spacing: 0.08em;
-
-  transition:
-    background 180ms ease,
-    color 180ms ease,
-    transform 180ms ease;
-}
-
-.mobile-navigation a:hover,
-.mobile-navigation a:active {
-  color: #b51218;
-
-  background:
-    rgba(181, 18, 24, 0.06);
-
-  transform: translateX(3px);
-}
-
-@media (max-width: 760px) {
-
-  .mobile-menu-toggle {
-    display: flex;
-  }
-
-  .nav-cta {
-    display: none !important;
-  }
-
-  .mobile-navigation {
-    display: flex;
-  }
-
 }
 
 @media (min-width: 761px) {
-
-  .mobile-navigation {
-    display: none !important;
-  }
-
-}
-/* =========================================================
-   MOBILE WEBGL HERO
-========================================================= */
-
-.webgl-hero-background {
-  position: absolute !important;
-  inset: 0 !important;
-  z-index: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  overflow: hidden !important;
-  pointer-events: none !important;
-  opacity: 0.6 !important;
-}
-
-.webgl-hero-background canvas {
-  display: block !important;
-  width: 100% !important;
-  height: 100% !important;
-}
-
-@media (pointer: coarse) {
-  .webgl-hero-background {
-    opacity: 0.48 !important;
-  }
-}
-/* =========================================================
-   CINEMATIC MOBILE HERO BACKGROUND
-   Reliable iPhone / iPad animation
-========================================================= */
-
-.mobile-cinematic-background {
-  position: absolute !important;
-  inset: 0 !important;
-  z-index: 0 !important;
-  overflow: hidden !important;
-  pointer-events: none !important;
-  opacity: 1 !important;
-
-  background:
-    radial-gradient(
-      circle at 50% 45%,
-      rgba(255, 255, 255, 0.96) 0%,
-      rgba(238, 240, 243, 0.94) 38%,
-      rgba(222, 226, 231, 0.92) 100%
-    ) !important;
-}
-
-/* Main cinematic light */
-
-.mobile-cinematic-orb {
-  position: absolute;
-  width: 72vw;
-  height: 72vw;
-  max-width: 520px;
-  max-height: 520px;
-
-  border-radius: 50%;
-
-  filter: blur(55px);
-
-  will-change:
-    transform,
-    opacity;
-
-  pointer-events: none;
-}
-
-/* Navy atmosphere */
-
-.mobile-cinematic-orb.orb-one {
-
-  top: -20%;
-  left: -25%;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(16, 42, 76, 0.22) 0%,
-      rgba(16, 42, 76, 0.10) 38%,
-      transparent 72%
-    );
-
-  animation:
-    cinematicOrbOne
-    11s
-    ease-in-out
-    infinite alternate;
-}
-
-/* Crimson atmosphere */
-
-.mobile-cinematic-orb.orb-two {
-
-  right: -30%;
-  bottom: -15%;
-
-  width: 78vw;
-  height: 78vw;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(181, 18, 24, 0.17) 0%,
-      rgba(181, 18, 24, 0.07) 42%,
-      transparent 74%
-    );
-
-  animation:
-    cinematicOrbTwo
-    13s
-    ease-in-out
-    infinite alternate;
-}
-
-/* Soft navy travelling light */
-
-.mobile-cinematic-orb.orb-three {
-
-  width: 52vw;
-  height: 52vw;
-
-  left: 42%;
-  top: 28%;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(16, 42, 76, 0.12) 0%,
-      rgba(16, 42, 76, 0.045) 42%,
-      transparent 74%
-    );
-
-  filter: blur(65px);
-
-  animation:
-    cinematicOrbThree
-    9s
-    ease-in-out
-    infinite alternate;
-}
-
-/* Premium subtle grain */
-
-.mobile-cinematic-noise {
-
-  position: absolute;
-  inset: 0;
-
-  pointer-events: none;
-
-  opacity: 0.055;
-
-  background-image:
-    url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.45'/%3E%3C/svg%3E");
-
-  mix-blend-mode: multiply;
-}
-
-/* =========================================================
-   MOBILE ANIMATION
-========================================================= */
-
-@keyframes cinematicOrbOne {
-
-  0% {
-    transform:
-      translate3d(
-        -5vw,
-        -2vh,
-        0
-      )
-      scale(0.92);
-  }
-
-  50% {
-    transform:
-      translate3d(
-        18vw,
-        10vh,
-        0
-      )
-      scale(1.12);
-  }
-
-  100% {
-    transform:
-      translate3d(
-        5vw,
-        22vh,
-        0
-      )
-      scale(1.02);
-  }
-}
-
-@keyframes cinematicOrbTwo {
-
-  0% {
-    transform:
-      translate3d(
-        8vw,
-        8vh,
-        0
-      )
-      scale(0.92);
-  }
-
-  50% {
-    transform:
-      translate3d(
-        -18vw,
-        -10vh,
-        0
-      )
-      scale(1.15);
-  }
-
-  100% {
-    transform:
-      translate3d(
-        -5vw,
-        -20vh,
-        0
-      )
-      scale(1.02);
-  }
-}
-
-@keyframes cinematicOrbThree {
-
-  0% {
-    transform:
-      translate3d(
-        -18vw,
-        4vh,
-        0
-      )
-      scale(0.8);
-    opacity: 0.55;
-  }
-
-  50% {
-    transform:
-      translate3d(
-        12vw,
-        -8vh,
-        0
-      )
-      scale(1.15);
-    opacity: 1;
-  }
-
-  100% {
-    transform:
-      translate3d(
-        -4vw,
-        12vh,
-        0
-      )
-      scale(0.95);
-    opacity: 0.7;
-  }
-}
-
-/* =========================================================
-   KEEP HERO CONTENT ABOVE BACKGROUND
-========================================================= */
-
-.hero-section {
-  position: relative;
-  isolation: isolate;
-}
-
-.webgl-hero-background {
-  z-index: 0 !important;
-}
-
-.hero-name-background {
-  z-index: 1 !important;
-}
-
-.hero-grid {
-  position: relative;
-  z-index: 5 !important;
-}
-
-/* Mobile optimization */
-
-@media (max-width: 700px) {
-
-  .mobile-cinematic-orb {
-    filter: blur(48px);
-  }
-
-  .mobile-cinematic-orb.orb-three {
-    filter: blur(55px);
-  }
-
-}
-
-/* Very small phones */
-
-@media (max-width: 390px) {
-
-  .mobile-cinematic-orb {
-    filter: blur(42px);
-  }
-
-  .mobile-cinematic-orb.orb-three {
-    filter: blur(48px);
-  }
-
-}
-
-/* Reduced motion */
-
-@media (prefers-reduced-motion: reduce) {
-
-  .mobile-cinematic-orb {
-    animation: none !important;
-  }
-
-}
-/* =========================================================
-   MOBILE CINEMATIC HERO
-   ========================================================= */
-
-.mobile-hero-animation {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  overflow: hidden;
-  pointer-events: none;
-
-  background:
-    radial-gradient(
-      circle at 50% 45%,
-      #f8f9fa 0%,
-      #e9ebee 42%,
-      #d7dbe0 100%
-    );
-
-  display: none;
-}
-
-.mobile-liquid {
-  position: absolute;
-
-  width: 90vw;
-  height: 90vw;
-
-  border-radius: 50%;
-
-  filter: blur(55px);
-
-  will-change: transform;
-
-  mix-blend-mode: multiply;
-}
-
-.mobile-liquid-one {
-  left: -35%;
-  top: -20%;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(16, 42, 76, 0.25),
-      rgba(16, 42, 76, 0.05) 55%,
-      transparent 75%
-    );
-
-  animation:
-    mobileLiquidOne
-    12s
-    ease-in-out
-    infinite alternate;
-}
-
-.mobile-liquid-two {
-  right: -35%;
-  top: 5%;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(181, 18, 24, 0.16),
-      rgba(181, 18, 24, 0.04) 55%,
-      transparent 75%
-    );
-
-  animation:
-    mobileLiquidTwo
-    15s
-    ease-in-out
-    infinite alternate;
-}
-
-.mobile-liquid-three {
-  left: 15%;
-  top: 25%;
-
-  width: 110vw;
-  height: 70vw;
-
-  background:
-    radial-gradient(
-      ellipse,
-      rgba(16, 42, 76, 0.13),
-      transparent 68%
-    );
-
-  filter: blur(70px);
-
-  animation:
-    mobileLiquidThree
-    10s
-    ease-in-out
-    infinite alternate;
-}
-
-.mobile-liquid-four {
-  right: -20%;
-  bottom: -20%;
-
-  width: 100vw;
-  height: 100vw;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(181, 18, 24, 0.12),
-      transparent 70%
-    );
-
-  animation:
-    mobileLiquidFour
-    14s
-    ease-in-out
-    infinite alternate;
-}
-
-.mobile-noise {
-  position: absolute;
-  inset: 0;
-
-  opacity: 0.045;
-
-  background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='.5'/%3E%3C/svg%3E");
-
-  pointer-events: none;
-}
-
-/* =========================================================
-   MOBILE ONLY
-   ========================================================= */
-
-@media (max-width: 760px) {
-
+  .mobile-navigation,
+  .mobile-menu-toggle,
+  .mobile-cinematic-background,
   .mobile-hero-animation {
-    display: block;
-  }
-
-  /*
-     Hide WebGL ONLY on mobile.
-     Desktop WebGL remains untouched.
-  */
-
-  .hero-section > .webgl-hero-background {
     display: none !important;
   }
 
-}
-
-/* =========================================================
-   LIQUID MOTION
-   ========================================================= */
-
-@keyframes mobileLiquidOne {
-
-  0% {
-    transform:
-      translate3d(
-        -10vw,
-        -5vh,
-        0
-      )
-      scale(0.9)
-      rotate(0deg);
+  /* Preserve the working desktop WebGL background. */
+  .hero-section > .webgl-hero-background {
+    display: block !important;
   }
-
-  50% {
-    transform:
-      translate3d(
-        20vw,
-        15vh,
-        0
-      )
-      scale(1.2)
-      rotate(20deg);
-  }
-
-  100% {
-    transform:
-      translate3d(
-        5vw,
-        30vh,
-        0
-      )
-      scale(1.05)
-      rotate(-10deg);
-  }
-}
-
-@keyframes mobileLiquidTwo {
-
-  0% {
-    transform:
-      translate3d(
-        10vw,
-        -5vh,
-        0
-      )
-      scale(0.9);
-  }
-
-  50% {
-    transform:
-      translate3d(
-        -20vw,
-        15vh,
-        0
-      )
-      scale(1.2);
-  }
-
-  100% {
-    transform:
-      translate3d(
-        -5vw,
-        30vh,
-        0
-      )
-      scale(1;
-  }
-}
-
-@keyframes mobileLiquidThree {
-
-  0% {
-    transform:
-      translate3d(
-        -15vw,
-        0,
-        0
-      )
-      scale(0.9);
-  }
-
-  50% {
-    transform:
-      translate3d(
-        15vw,
-        -10vh,
-        0
-      )
-      scale(1.15);
-  }
-
-  100% {
-    transform:
-      translate3d(
-        -5vw,
-        15vh,
-        0
-      )
-      scale(1.05);
-  }
-}
-
-@keyframes mobileLiquidFour {
-
-  0% {
-    transform:
-      translate3d(
-        10vw,
-        10vh,
-        0
-      )
-      scale(0.9);
-  }
-
-  50% {
-    transform:
-      translate3d(
-        -15vw,
-        -15vh,
-        0
-      )
-      scale(1.2);
-  }
-
-  100% {
-    transform:
-      translate3d(
-        -5vw,
-        -5vh,
-        0
-      )
-      scale(1;
-  }
-}
-
-/* Small phones */
-
-@media (max-width: 390px) {
-
-  .mobile-liquid {
-    filter: blur(45px);
-  }
-
-  .mobile-liquid-three {
-    filter: blur(55px);
-  }
-
-}
-
-/* Respect accessibility */
-
-@media (prefers-reduced-motion: reduce) {
-
-  .mobile-liquid {
-    animation: none !important;
-  }
-
 }
