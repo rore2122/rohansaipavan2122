@@ -443,10 +443,22 @@ export default function Home() {
           HERO
       ========================================================= */}
 
-      <section className="hero-section" id="hero">
-        <WebGLHeroBackground />
+     <section className="hero-section" id="hero">
+  <WebGLHeroBackground />
 
-        <div className="hero-name-background" aria-hidden="true">
+  {/* Mobile cinematic background */}
+  <div
+    className="mobile-hero-animation"
+    aria-hidden="true"
+  >
+    <div className="mobile-liquid mobile-liquid-one" />
+    <div className="mobile-liquid mobile-liquid-two" />
+    <div className="mobile-liquid mobile-liquid-three" />
+    <div className="mobile-liquid mobile-liquid-four" />
+    <div className="mobile-noise" />
+  </div>
+
+  <div className="hero-name-background" aria-hidden="true">
           <span>ROHAN</span>
           <span>SAI</span>
           <span>PAVAN</span>
