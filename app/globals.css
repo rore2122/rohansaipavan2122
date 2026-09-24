@@ -8058,7 +8058,7 @@ html.lenis body {
   }
 
   /* WebGL stays desktop-only; mobile uses the reliable CSS GPU layer. */
-  .hero-section > .webgl-hero-background {
+  .hero-section > .webgl-hero-background:not(.mobile-cinematic-background) {
     display: none !important;
   }
 
@@ -8178,7 +8178,7 @@ html.lenis body {
   }
 
   /* Preserve the working desktop WebGL background. */
-  .hero-section > .webgl-hero-background {
+  .hero-section > .webgl-hero-background:not(.mobile-cinematic-background) {
     display: block !important;
   }
 }
@@ -8604,4 +8604,32 @@ img, svg, video, canvas {
     border: 1px solid rgba(16, 42, 76, 0.28) !important;
     background: rgba(255, 255, 255, 0.7) !important;
   }
+}
+
+
+/* =========================================================
+   MOBILE BACKGROUND ANIMATION — always visible on touch devices
+========================================================= */
+
+.hero-section > .mobile-cinematic-background,
+.hero-section > .webgl-hero-background.mobile-cinematic-background {
+  display: block !important;
+  opacity: 1 !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+}
+
+/* Slightly stronger than before so the motion reads on a small screen,
+   matching the navy + crimson feel of the desktop shader. */
+.mobile-cinematic-orb.orb-one {
+  background: radial-gradient(circle, rgba(16,42,76,.40) 0%, rgba(16,42,76,.16) 42%, transparent 73%) !important;
+}
+
+.mobile-cinematic-orb.orb-two {
+  background: radial-gradient(circle, rgba(181,18,24,.28) 0%, rgba(181,18,24,.11) 42%, transparent 74%) !important;
+}
+
+.mobile-cinematic-orb.orb-three {
+  background: radial-gradient(circle, rgba(16,42,76,.24) 0%, rgba(16,42,76,.08) 44%, transparent 75%) !important;
 }
