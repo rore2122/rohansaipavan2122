@@ -194,6 +194,7 @@ export default function Home() {
   const [direction, setDirection] = useState(1);
   const [showcasePaused, setShowcasePaused] = useState(false);
   const [activeExperience, setActiveExperience] = useState<string | null>(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const reduced = useReducedMotion();
 
   const currentProject = projects[activeProject];
