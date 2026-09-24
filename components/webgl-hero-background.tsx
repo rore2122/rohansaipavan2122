@@ -13,7 +13,7 @@ const vertexShader = `
       projectionMatrix *
       modelViewMatrix *
       vec4(position, 1.0);
-  }
+  } 
 `;
 
 const fragmentShader = `
