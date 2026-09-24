@@ -248,25 +248,196 @@ export default function Home() {
           NAVIGATION
       ========================================================= */}
 
-      <header className="site-header">
-        <nav className="nav-pill liquid-glass">
-          <div className="nav-links">
-            <a href="#about">About</a>
-            <a href="#experience">Experience</a>
-            <a href="#work">Projects</a>
-            <a href="#skills">Skills</a>
-            <a href="#education">Education</a>
-            <a href="#contact">Contact</a>
-          </div>
+     <header className="site-header">
 
-          <div className="nav-actions">
-            <a href="#contact" className="nav-cta chroma-hover" data-magnetic data-liquid>
-              <span className="button-label">Start a Conversation <span>↗</span></span>
-              <svg className="button-border-svg" viewBox="0 0 100 36" preserveAspectRatio="none" aria-hidden="true"><rect x="1" y="1" width="98" height="34" rx="17" /></svg>
-            </a>
-          </div>
-        </nav>
-      </header>
+  <nav
+    className="nav-pill liquid-glass"
+    aria-label="Primary navigation"
+  >
+
+    <div className="nav-links">
+
+      <a
+        href="#about"
+        onClick={() => setMobileMenuOpen(false)}
+      >
+        About
+      </a>
+
+      <a
+        href="#experience"
+        onClick={() => setMobileMenuOpen(false)}
+      >
+        Experience
+      </a>
+
+      <a
+        href="#work"
+        onClick={() => setMobileMenuOpen(false)}
+      >
+        Projects
+      </a>
+
+      <a
+        href="#skills"
+        onClick={() => setMobileMenuOpen(false)}
+      >
+        Skills
+      </a>
+
+      <a
+        href="#education"
+        onClick={() => setMobileMenuOpen(false)}
+      >
+        Education
+      </a>
+
+      <a
+        href="#contact"
+        onClick={() => setMobileMenuOpen(false)}
+      >
+        Contact
+      </a>
+
+    </div>
+
+    <div className="nav-actions">
+
+      <a
+        href="#contact"
+        className="nav-cta chroma-hover"
+        data-magnetic
+        data-liquid
+        onClick={() => setMobileMenuOpen(false)}
+      >
+        <span className="button-label">
+          Start a Conversation <span>↗</span>
+        </span>
+
+        <svg
+          className="button-border-svg"
+          viewBox="0 0 100 36"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+        >
+          <rect
+            x="1"
+            y="1"
+            width="98"
+            height="34"
+            rx="17"
+          />
+        </svg>
+      </a>
+
+      <button
+        type="button"
+        className={`mobile-menu-toggle ${
+          mobileMenuOpen ? "is-open" : ""
+        }`}
+        aria-label={
+          mobileMenuOpen
+            ? "Close navigation menu"
+            : "Open navigation menu"
+        }
+        aria-expanded={mobileMenuOpen}
+        onClick={() =>
+          setMobileMenuOpen((current) => !current)
+        }
+      >
+        <span />
+        <span />
+        <span />
+      </button>
+
+    </div>
+
+  </nav>
+
+  <AnimatePresence>
+    {mobileMenuOpen && (
+      <motion.div
+        className="mobile-navigation"
+        initial={{
+          opacity: 0,
+          y: -12,
+          scale: 0.98,
+        }}
+        animate={{
+          opacity: 1,
+          y: 0,
+          scale: 1,
+        }}
+        exit={{
+          opacity: 0,
+          y: -12,
+          scale: 0.98,
+        }}
+        transition={{
+          duration: 0.22,
+          ease: [0.22, 1, 0.36, 1],
+        }}
+      >
+
+        <a
+          href="#about"
+          onClick={() =>
+            setMobileMenuOpen(false)
+          }
+        >
+          About
+        </a>
+
+        <a
+          href="#experience"
+          onClick={() =>
+            setMobileMenuOpen(false)
+          }
+        >
+          Experience
+        </a>
+
+        <a
+          href="#work"
+          onClick={() =>
+            setMobileMenuOpen(false)
+          }
+        >
+          Projects
+        </a>
+
+        <a
+          href="#skills"
+          onClick={() =>
+            setMobileMenuOpen(false)
+          }
+        >
+          Skills
+        </a>
+
+        <a
+          href="#education"
+          onClick={() =>
+            setMobileMenuOpen(false)
+          }
+        >
+          Education
+        </a>
+
+        <a
+          href="#contact"
+          onClick={() =>
+            setMobileMenuOpen(false)
+          }
+        >
+          Contact
+        </a>
+
+      </motion.div>
+    )}
+  </AnimatePresence>
+
+</header>
 
       {/* =========================================================
           HERO
