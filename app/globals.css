@@ -8452,3 +8452,301 @@ button {
     opacity: 0.48 !important;
   }
 }
+/* =========================================================
+   CINEMATIC MOBILE HERO BACKGROUND
+   Reliable iPhone / iPad animation
+========================================================= */
+
+.mobile-cinematic-background {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+  opacity: 1 !important;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(255, 255, 255, 0.96) 0%,
+      rgba(238, 240, 243, 0.94) 38%,
+      rgba(222, 226, 231, 0.92) 100%
+    ) !important;
+}
+
+/* Main cinematic light */
+
+.mobile-cinematic-orb {
+  position: absolute;
+  width: 72vw;
+  height: 72vw;
+  max-width: 520px;
+  max-height: 520px;
+
+  border-radius: 50%;
+
+  filter: blur(55px);
+
+  will-change:
+    transform,
+    opacity;
+
+  pointer-events: none;
+}
+
+/* Navy atmosphere */
+
+.mobile-cinematic-orb.orb-one {
+
+  top: -20%;
+  left: -25%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(16, 42, 76, 0.22) 0%,
+      rgba(16, 42, 76, 0.10) 38%,
+      transparent 72%
+    );
+
+  animation:
+    cinematicOrbOne
+    11s
+    ease-in-out
+    infinite alternate;
+}
+
+/* Crimson atmosphere */
+
+.mobile-cinematic-orb.orb-two {
+
+  right: -30%;
+  bottom: -15%;
+
+  width: 78vw;
+  height: 78vw;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(181, 18, 24, 0.17) 0%,
+      rgba(181, 18, 24, 0.07) 42%,
+      transparent 74%
+    );
+
+  animation:
+    cinematicOrbTwo
+    13s
+    ease-in-out
+    infinite alternate;
+}
+
+/* Soft navy travelling light */
+
+.mobile-cinematic-orb.orb-three {
+
+  width: 52vw;
+  height: 52vw;
+
+  left: 42%;
+  top: 28%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(16, 42, 76, 0.12) 0%,
+      rgba(16, 42, 76, 0.045) 42%,
+      transparent 74%
+    );
+
+  filter: blur(65px);
+
+  animation:
+    cinematicOrbThree
+    9s
+    ease-in-out
+    infinite alternate;
+}
+
+/* Premium subtle grain */
+
+.mobile-cinematic-noise {
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.055;
+
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.45'/%3E%3C/svg%3E");
+
+  mix-blend-mode: multiply;
+}
+
+/* =========================================================
+   MOBILE ANIMATION
+========================================================= */
+
+@keyframes cinematicOrbOne {
+
+  0% {
+    transform:
+      translate3d(
+        -5vw,
+        -2vh,
+        0
+      )
+      scale(0.92);
+  }
+
+  50% {
+    transform:
+      translate3d(
+        18vw,
+        10vh,
+        0
+      )
+      scale(1.12);
+  }
+
+  100% {
+    transform:
+      translate3d(
+        5vw,
+        22vh,
+        0
+      )
+      scale(1.02);
+  }
+}
+
+@keyframes cinematicOrbTwo {
+
+  0% {
+    transform:
+      translate3d(
+        8vw,
+        8vh,
+        0
+      )
+      scale(0.92);
+  }
+
+  50% {
+    transform:
+      translate3d(
+        -18vw,
+        -10vh,
+        0
+      )
+      scale(1.15);
+  }
+
+  100% {
+    transform:
+      translate3d(
+        -5vw,
+        -20vh,
+        0
+      )
+      scale(1.02);
+  }
+}
+
+@keyframes cinematicOrbThree {
+
+  0% {
+    transform:
+      translate3d(
+        -18vw,
+        4vh,
+        0
+      )
+      scale(0.8);
+    opacity: 0.55;
+  }
+
+  50% {
+    transform:
+      translate3d(
+        12vw,
+        -8vh,
+        0
+      )
+      scale(1.15);
+    opacity: 1;
+  }
+
+  100% {
+    transform:
+      translate3d(
+        -4vw,
+        12vh,
+        0
+      )
+      scale(0.95);
+    opacity: 0.7;
+  }
+}
+
+/* =========================================================
+   KEEP HERO CONTENT ABOVE BACKGROUND
+========================================================= */
+
+.hero-section {
+  position: relative;
+  isolation: isolate;
+}
+
+.webgl-hero-background {
+  z-index: 0 !important;
+}
+
+.hero-name-background {
+  z-index: 1 !important;
+}
+
+.hero-grid {
+  position: relative;
+  z-index: 5 !important;
+}
+
+/* Mobile optimization */
+
+@media (max-width: 700px) {
+
+  .mobile-cinematic-orb {
+    filter: blur(48px);
+  }
+
+  .mobile-cinematic-orb.orb-three {
+    filter: blur(55px);
+  }
+
+}
+
+/* Very small phones */
+
+@media (max-width: 390px) {
+
+  .mobile-cinematic-orb {
+    filter: blur(42px);
+  }
+
+  .mobile-cinematic-orb.orb-three {
+    filter: blur(48px);
+  }
+
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .mobile-cinematic-orb {
+    animation: none !important;
+  }
+
+}
