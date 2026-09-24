@@ -113,7 +113,7 @@
   --white-overlay-015: rgba(255, 255, 255, 0.015);
   --white-overlay-025: rgba(255, 255, 255, 0.025);
   --project-red-glow: rgba(190, 30, 55, 0.14);
-  --project-green-glow: var(--project-green-glow);
+  --project-green-glow: rgba(62, 122, 94, 0.1);
   --project-gold-glow: rgba(210, 165, 80, 0.12);
   --serif: "Playfair Display", Georgia, serif;
   --sans: "Manrope", Arial, sans-serif;
@@ -5643,6 +5643,7 @@ body,
   .experience-popup::before {
     inset: 5px;
   }
+}
 
 /* =========================================================
    HEADER — LEFT IDENTITY
