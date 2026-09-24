@@ -255,6 +255,15 @@ export default function Home() {
     aria-label="Primary navigation"
   >
 
+    <a
+      href="#top"
+      className="nav-brand"
+      onClick={() => setMobileMenuOpen(false)}
+    >
+      <span className="nav-brand-dot" />
+      Rohan Sai Pavan
+    </a>
+
     <div className="nav-links">
 
       <a
