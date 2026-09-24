@@ -100,8 +100,8 @@ const fragmentShader = `
         0.0
       );
 
-    m = m * m;
-    m = m * m;
+    m *= m;
+    m *= m;
 
     vec3 x =
       2.0 *
@@ -139,33 +139,19 @@ const fragmentShader = `
       a0.yz * x12.xz +
       h.yz * x12.yw;
 
-    return 130.0 *
-      dot(m, g);
+    return 130.0 * dot(m, g);
   }
 
   void main() {
 
     vec2 uv = vUv;
 
-    /*
-      Slow cinematic movement.
-      This continues on phones as well.
-    */
-    float t =
-      uTime *
-      0.045;
+    float t = uTime * 0.045;
 
-    vec2 pos =
-      uv *
-      2.4;
+    vec2 pos = uv * 2.4;
 
     pos.x += t;
 
-    /*
-      Mouse interaction.
-      On touch devices the mouse simply remains
-      near the center, so the animation still runs.
-    */
     float d =
       distance(
         uv,
@@ -240,6 +226,7 @@ const fragmentShader = `
 `;
 
 function ShaderPlane() {
+
   const materialRef =
     useRef<THREE.ShaderMaterial>(null);
 
@@ -287,10 +274,12 @@ function ShaderPlane() {
     );
 
     return () => {
+
       window.removeEventListener(
         "pointermove",
         handlePointerMove
       );
+
     };
 
   }, []);
@@ -298,6 +287,7 @@ function ShaderPlane() {
   const uniforms =
     useMemo(
       () => ({
+
         uTime: {
           value: 0,
         },
@@ -330,6 +320,7 @@ function ShaderPlane() {
               "#b51218"
             ),
         },
+
       }),
       []
     );
@@ -343,20 +334,15 @@ function ShaderPlane() {
         return;
       }
 
-      /*
-        Smooth mouse movement.
-      */
       mouse.current.lerp(
         targetMouse.current,
         0.025
       );
 
-      /*
-        IMPORTANT:
-        The animation clock ALWAYS
-        updates on mobile.
-      */
-      materialRef.current.uniforms.uTime.value =
+      materialRef.current
+        .uniforms
+        .uTime
+        .value =
         state.clock.elapsedTime;
 
       (
@@ -367,6 +353,7 @@ function ShaderPlane() {
       ).copy(
         mouse.current
       );
+
     }
   );
 
@@ -378,26 +365,44 @@ function ShaderPlane() {
         1,
       ]}
     >
+
       <planeGeometry
-        args={[1, 1]}
+        args={[
+          1,
+          1,
+        ]}
       />
 
       <shaderMaterial
         ref={materialRef}
-        vertexShader={vertexShader}
-        fragmentShader={fragmentShader}
-        uniforms={uniforms}
+        vertexShader={
+          vertexShader
+        }
+        fragmentShader={
+          fragmentShader
+        }
+        uniforms={
+          uniforms
+        }
         depthWrite={false}
         depthTest={false}
       />
+
     </mesh>
   );
 }
 
 export default function WebGLHeroBackground() {
 
-  const [ready, setReady] =
-    useState(false);
+  const [
+    ready,
+    setReady
+  ] = useState(false);
+
+  const [
+    touchDevice,
+    setTouchDevice
+  ] = useState(false);
 
   useEffect(() => {
 
@@ -406,13 +411,19 @@ export default function WebGLHeroBackground() {
         "(prefers-reduced-motion: reduce)"
       ).matches;
 
+    const coarse =
+      window.matchMedia(
+        "(pointer: coarse)"
+      ).matches;
+
+    setTouchDevice(
+      coarse
+    );
+
     if (reduced) {
       return;
     }
 
-    /*
-      DO NOT disable WebGL on phones.
-    */
     setReady(true);
 
   }, []);
@@ -421,14 +432,52 @@ export default function WebGLHeroBackground() {
     return null;
   }
 
+  /*
+   * MOBILE / TABLET
+   *
+   * iPhone/iPad use the CSS cinematic
+   * animation instead of WebGL.
+   *
+   * This is intentional:
+   * Safari gets a reliable animated
+   * background without depending on
+   * WebGL context availability.
+   */
+
+  if (touchDevice) {
+
+    return (
+      <div
+        className="webgl-hero-background mobile-cinematic-background"
+        aria-hidden="true"
+      >
+        <div className="mobile-cinematic-orb orb-one" />
+        <div className="mobile-cinematic-orb orb-two" />
+        <div className="mobile-cinematic-orb orb-three" />
+        <div className="mobile-cinematic-noise" />
+      </div>
+    );
+  }
+
+  /*
+   * DESKTOP
+   *
+   * Keep the existing WebGL
+   * cinematic background.
+   */
+
   return (
     <div
       className="webgl-hero-background"
       aria-hidden="true"
     >
+
       <Canvas
         frameloop="always"
-        dpr={[1, 1.25]}
+        dpr={[
+          1,
+          1.5
+        ]}
         gl={{
           antialias: false,
           alpha: false,
@@ -439,12 +488,15 @@ export default function WebGLHeroBackground() {
           position: [
             0,
             0,
-            1,
+            1
           ],
         }}
       >
+
         <ShaderPlane />
+
       </Canvas>
+
     </div>
   );
 }
